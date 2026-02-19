@@ -96,3 +96,26 @@
 - 3 ROUTE -> MedicationStatement.dosage.route
 - 4 SCHEDULE -> MedicationStatement.dosage.timing
 - 5 STATUS -> MedicationStatement.status
+
+## Build Status
+
+### IG Publisher Results (2026-02-19)
+- SUSHI: 0 Errors, 0 Warnings
+- Publisher: 72 Errors, 47 Warnings, 63 Info messages, 3 Broken Links
+- Most errors are validation issues with examples that need refinement
+- Output generated in `output/` folder
+
+### GitHub Push Instructions
+Since `gh` CLI is not available, push manually:
+```bash
+# Create repository on GitHub first, then:
+git remote add origin https://github.com/YOUR_USERNAME/essential-medication-information.git
+git branch -M main
+git push -u origin main
+```
+
+## Future Work / Known Issues
+1. Example validation errors need to be addressed
+2. May need to add extensions for complex IV orders (multiple additives/solutions)
+3. VistA status codes need formal ValueSet definition
+4. Consider adding Practitioner profile for prescriber information
