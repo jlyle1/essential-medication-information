@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(sushi:*)",
+      "Bash(cmd /c \"_updatePublisher.bat\")",
+      "Bash(cmd /c \"_genonce.bat\")",
+      "Bash(ls:*)",
+      "Bash(dir \"c:\\\\repos\\\\essential-medication-information\\\\input-cache\")",
+      "Bash(java:*)"
+    ]
+  }
+}

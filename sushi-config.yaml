@@ -1,0 +1,102 @@
+# ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
+# │  used properties are included. For a list of all supported properties and their functions,     │
+# │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: va-emi
+canonical: http://va.gov/fhir/emi
+name: EssentialMedicationInformation
+title: VA Essential Medication Information
+description: Implementation Guide for Essential Medication Information based on VHA Directive 1164
+status: draft # draft | active | retired | unknown
+version: 0.1.0
+fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+copyrightYear: 2024+
+releaseLabel: ci-build
+license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
+jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+publisher:
+  name: VA Pharmacy Benefits Management Services
+  url: https://www.va.gov/
+  email: pbm@va.gov
+
+# Dependencies
+dependencies:
+  hl7.fhir.us.core: 6.1.0
+
+# Pages
+pages:
+  index.md:
+    title: Home
+  artifacts.html:
+    title: Artifacts
+
+# Menu
+menu:
+  Home: index.html
+  Artifacts: artifacts.html
+  Operation: OperationDefinition-medication-list.html
+
+# Parameters
+parameters:
+  show-inherited-invariants: false
+
+# Instance options
+instanceOptions:
+  manualSliceOrdering: true
+  setMetaProfile: always
+  setId: always
+
+# Groups for organized artifact display
+groups:
+  PatientProfiles:
+    name: Patient and Demographics
+    description: Profiles for patient identification
+    resources:
+      - StructureDefinition/emi-patient
+  AllergyProfiles:
+    name: Allergy/ADR
+    description: Profiles for allergies and adverse drug reactions
+    resources:
+      - StructureDefinition/emi-allergyintolerance
+      - StructureDefinition/emi-allergy-list
+  MedicationProfiles:
+    name: Medications
+    description: Profiles for medication information from various sources
+    resources:
+      - StructureDefinition/emi-outpatient-medicationrequest
+      - StructureDefinition/emi-unitdose-medicationrequest
+      - StructureDefinition/emi-iv-medicationrequest
+      - StructureDefinition/emi-nonva-medicationstatement
+      - StructureDefinition/emi-medication-list
+  DispenseProfiles:
+    name: Dispense and Pharmacy
+    description: Profiles for dispense events and pharmacy information
+    resources:
+      - StructureDefinition/emi-medicationdispense
+      - StructureDefinition/emi-pharmacy-organization
+  CounselingProfiles:
+    name: Counseling
+    description: Profiles for medication counseling documentation
+    resources:
+      - StructureDefinition/emi-medication-counseling-observation
+  BundleProfiles:
+    name: Bundle and Parameters
+    description: Profiles for operation input/output
+    resources:
+      - StructureDefinition/emi-medication-bundle
+      - StructureDefinition/emi-request-parameters
+  Operations:
+    name: Operations
+    description: FHIR Operations defined by this IG
+    resources:
+      - OperationDefinition/medication-list
+  Terminology:
+    name: Terminology
+    description: Code systems and value sets
+    resources:
+      - CodeSystem/emi-counseling-status
+      - CodeSystem/emi-medication-source
+      - ValueSet/emi-counseling-status-vs
+      - ValueSet/emi-medication-source-vs
+      - ValueSet/emi-list-empty-reason-vs
