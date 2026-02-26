@@ -1,0 +1,16 @@
+<style>
+/* DRAFT Watermark */
+body::before {
+  content: "DRAFT";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 150px;
+  font-weight: bold;
+  color: rgba(255, 0, 0, 0.15);
+  z-index: 9999;
+  pointer-events: none;
+  white-space: nowrap;
+}
+</style>
