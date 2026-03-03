@@ -7,6 +7,13 @@ Description: "Outpatient prescription profile for Essential Medication Informati
 * ^status = #active
 * ^version = "1.0.0"
 
+// Extensions for dispense summary (alternative to sending MedicationDispense resources)
+* extension contains
+    $DateLastDispensed named dateLastDispensed 0..1 MS and
+    $RemainingFills named remainingFills 0..1 MS
+* extension[dateLastDispensed] ^short = "Date medication was last dispensed"
+* extension[remainingFills] ^short = "Number of refills remaining"
+
 // Identifier - RX number
 * identifier 1..* MS
 * identifier ^slicing.discriminator.type = #pattern
@@ -22,7 +29,9 @@ Description: "Outpatient prescription profile for Essential Medication Informati
 // Status
 * status MS
 * status ^short = "active | on-hold | cancelled | completed | entered-in-error | stopped | draft"
-* status ^definition = "Current status of the prescription."
+* status ^definition = "Current status of the prescription. Use alternate-codes extension for original VistA status."
+* status.extension contains $AlternateCodes 0..1 MS
+* status.extension[$AlternateCodes] ^short = "VistA pharmacy order status (File 52, Field 100)"
 
 // Intent - always order for prescriptions
 * intent = #order (exactly)

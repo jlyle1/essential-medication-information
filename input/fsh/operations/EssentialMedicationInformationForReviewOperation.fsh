@@ -46,7 +46,7 @@ Description: "Retrieve a patient's essential medication information including al
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "*"
-* parameter[=].documentation = "Filter to specific medication sources (local-va, remote-va, non-va, etc.). If not specified, all sources are included."
+* parameter[=].documentation = "Filter to specific medication sources (local-va, remote-va, external, etc.). If not specified, all sources are included."
 * parameter[=].type = #code
 * parameter[=].binding.strength = #required
 * parameter[=].binding.valueSet = Canonical(EMIMedicationSourceVS)

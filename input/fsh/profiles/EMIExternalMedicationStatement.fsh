@@ -1,8 +1,8 @@
-Profile: EMINonVAMedicationStatement
+Profile: EMIExternalMedicationStatement
 Parent: MedicationStatement
-Id: emi-nonva-medicationstatement
-Title: "EMI Non-VA MedicationStatement"
-Description: "Non-VA medication profile for Essential Medication Information, representing VistA File 55.05 non-VA medications including OTC, herbal, and outside prescriptions."
+Id: emi-external-medicationstatement
+Title: "EMI External MedicationStatement"
+Description: "External medication profile for Essential Medication Information, representing VistA File 55.05 non-VA medications including OTC, herbal, and outside prescriptions."
 
 * ^status = #active
 * ^version = "1.0.0"
@@ -10,18 +10,20 @@ Description: "Non-VA medication profile for Essential Medication Information, re
 // Status required
 * status 1..1 MS
 * status ^short = "active | completed | entered-in-error | intended | stopped | on-hold | unknown | not-taken"
+* status.extension contains $AlternateCodes 0..1 MS
+* status.extension[$AlternateCodes] ^short = "VistA pharmacy order status (File 55.05, Field 5)"
 
-// Category - community (non-VA)
+// Category - community (external)
 * category MS
 * category = $MedicationStatementCategory#community
-* category ^short = "Community/Non-VA medication"
+* category ^short = "Community/external medication"
 
 // Medication
 * medication[x] only CodeableConcept
 * medicationCodeableConcept 1..1 MS
 * medicationCodeableConcept from http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4 (preferred)
-* medicationCodeableConcept ^short = "Non-VA medication with RxNorm code"
-* medicationCodeableConcept ^definition = "The non-VA medication including name, strength, and form. May include OTC, herbal, nutraceuticals, or outside prescriptions."
+* medicationCodeableConcept ^short = "External medication with RxNorm code"
+* medicationCodeableConcept ^definition = "The external medication including name, strength, and form. May include OTC, herbal, nutraceuticals, or outside prescriptions."
 
 // Subject
 * subject only Reference(EMIPatient)
@@ -58,7 +60,7 @@ Description: "Non-VA medication profile for Essential Medication Information, re
 Mapping: VistAFile55-05
 Id: vista-file-55-05
 Title: "VistA Non-VA Meds File (55.05)"
-Source: EMINonVAMedicationStatement
+Source: EMIExternalMedicationStatement
 Target: "http://va.gov/fhir/emi/StructureDefinition/vista-file-55-05"
 
 * medicationCodeableConcept -> "File 55.05, Field .01 (ORDERABLE ITEM) -> mapped to RxNorm"

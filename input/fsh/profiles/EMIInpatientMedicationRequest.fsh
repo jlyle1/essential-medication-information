@@ -22,6 +22,8 @@ Description: "Inpatient unit dose medication profile for Essential Medication In
 // Status
 * status MS
 * status ^short = "active | on-hold | cancelled | completed | entered-in-error | stopped"
+* status.extension contains $AlternateCodes 0..1 MS
+* status.extension[$AlternateCodes] ^short = "VistA pharmacy order status (File 55.06, Field 28)"
 
 // Intent - always order
 * intent = #order (exactly)

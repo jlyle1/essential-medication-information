@@ -10,8 +10,13 @@ Alias: $UCUM = http://unitsofmeasure.org
 // Identifier Systems
 Alias: $ICN = urn:oid:2.16.840.1.113883.4.349
 Alias: $EDIPI = urn:oid:2.16.840.1.113883.3.42.10001.100001.12
+Alias: $VistAPatientIEN = http://va.gov/fhir/emi/sid/patient-ien
 Alias: $VistARxNumber = http://va.gov/fhir/emi/sid/rx-number
 Alias: $VistAOrderNumber = http://va.gov/fhir/emi/sid/order-number
+Alias: $IdentifierType = http://terminology.hl7.org/CodeSystem/v2-0203
+
+// FHIR Core Extensions
+Alias: $AlternateCodes = http://hl7.org/fhir/StructureDefinition/alternate-codes
 
 // FHIR Core
 Alias: $ObservationCategory = http://terminology.hl7.org/CodeSystem/observation-category
@@ -21,7 +26,6 @@ Alias: $ListEmptyReason = http://terminology.hl7.org/CodeSystem/list-empty-reaso
 Alias: $V3ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 
 // EMI-specific
-Alias: $EMICounselingStatus = http://va.gov/fhir/emi/CodeSystem/counseling-status
 Alias: $EMIMedicationSource = http://va.gov/fhir/emi/CodeSystem/medication-source
 Alias: $DateLastDispensed = http://va.gov/fhir/emi/StructureDefinition/emi-date-last-dispensed
 Alias: $RemainingFills = http://va.gov/fhir/emi/StructureDefinition/emi-remaining-fills

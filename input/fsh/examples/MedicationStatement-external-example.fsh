@@ -1,8 +1,8 @@
-Instance: medicationstatement-nonva-example
-InstanceOf: EMINonVAMedicationStatement
+Instance: medicationstatement-external-example
+InstanceOf: EMIExternalMedicationStatement
 Usage: #example
-Title: "EMI Non-VA MedicationStatement Example"
-Description: "Example of a non-VA medication (patient-reported OTC) from VistA File 55.05."
+Title: "EMI External MedicationStatement Example"
+Description: "Example of an external medication (patient-reported OTC) from VistA File 55.05."
 
 * status = #active
 * category = $MedicationStatementCategory#community
@@ -23,11 +23,11 @@ Description: "Example of a non-VA medication (patient-reported OTC) from VistA F
 * dosage[=].timing.repeat.period = 1
 * dosage[=].timing.repeat.periodUnit = #d
 
-Instance: medicationstatement-nonva-herbal-example
-InstanceOf: EMINonVAMedicationStatement
+Instance: medicationstatement-external-herbal-example
+InstanceOf: EMIExternalMedicationStatement
 Usage: #example
-Title: "EMI Non-VA MedicationStatement - Herbal"
-Description: "Example of a non-VA herbal supplement."
+Title: "EMI External MedicationStatement - Herbal"
+Description: "Example of an external herbal supplement."
 
 * status = #active
 * category = $MedicationStatementCategory#community

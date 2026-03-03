@@ -2,7 +2,7 @@ Profile: EMIMedicationList
 Parent: List
 Id: emi-medication-list
 Title: "EMI Medication List"
-Description: "List profile for patient medications in Essential Medication Information. Supports empty lists with emptyReason and includes medications from multiple sources (outpatient, inpatient, non-VA)."
+Description: "List profile for patient medications in Essential Medication Information. Supports empty lists with emptyReason and includes medications from multiple sources (outpatient, inpatient, external)."
 
 * ^status = #active
 * ^version = "1.0.0"
@@ -45,11 +45,11 @@ Description: "List profile for patient medications in Essential Medication Infor
 
 // Entries - can reference any medication resource type
 * entry MS
-* entry.item only Reference(EMIOutpatientMedicationRequest or EMIInpatientMedicationRequest or EMIIVMedicationRequest or EMINonVAMedicationStatement)
+* entry.item only Reference(EMIOutpatientMedicationRequest or EMIInpatientMedicationRequest or EMIIVMedicationRequest or EMIExternalMedicationStatement)
 * entry.item ^short = "Medication entry from any source"
 * entry.flag MS
 * entry.flag from EMIMedicationSourceVS (preferred)
-* entry.flag ^short = "Source of medication (local VA, remote VA, non-VA)"
+* entry.flag ^short = "Source of medication (local VA, remote VA, external)"
 
 // Invariant: must have entries or emptyReason
 * obeys emi-med-list-content

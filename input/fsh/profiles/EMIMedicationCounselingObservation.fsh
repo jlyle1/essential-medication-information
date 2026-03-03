@@ -21,7 +21,7 @@ Description: "Observation profile for medication counseling status, capturing wh
 
 // Code - medication counseling
 * code 1..1 MS
-* code = $LOINC#98214-8 "Medication counseling provided"
+* code = $SCT#423076000 "Medication prescription education, guidance and counseling (procedure)"
 * code ^short = "Medication counseling observation"
 
 // Subject
@@ -56,18 +56,18 @@ Description: "Observation profile for medication counseling status, capturing wh
     wasUnderstood 1..1 MS
 
 // Was the patient counseled?
-* component[wasCounseled].code = $EMICounselingStatus#was-counseled "Was Patient Counseled"
+* component[wasCounseled].code = $SCT#408730004 "Procedure context (attribute)"
 * component[wasCounseled].code ^short = "Was the patient counseled"
 * component[wasCounseled].value[x] only CodeableConcept
-* component[wasCounseled].valueCodeableConcept from EMICounselingStatusVS (required)
-* component[wasCounseled].valueCodeableConcept ^short = "yes | no | not-applicable"
+* component[wasCounseled].valueCodeableConcept from EMICounselingProvidedVS (required)
+* component[wasCounseled].valueCodeableConcept ^short = "Done | Not done"
 
 // Was counseling understood?
-* component[wasUnderstood].code = $EMICounselingStatus#was-understood "Was Counseling Understood"
+* component[wasUnderstood].code = $SCT#66216009 "Understanding, function (observable entity)"
 * component[wasUnderstood].code ^short = "Was counseling understood"
 * component[wasUnderstood].value[x] only CodeableConcept
-* component[wasUnderstood].valueCodeableConcept from EMICounselingStatusVS (required)
-* component[wasUnderstood].valueCodeableConcept ^short = "yes | no | not-applicable"
+* component[wasUnderstood].valueCodeableConcept from EMICounselingUnderstoodVS (required)
+* component[wasUnderstood].valueCodeableConcept ^short = "Verbalizes understanding | Disturbance of understanding"
 
 // Mappings to VistA File 52
 Mapping: VistAFile52Counseling

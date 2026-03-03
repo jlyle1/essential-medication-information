@@ -33,11 +33,11 @@ Description: "Example of a complete medication bundle returned from the $essenti
 * entry[+].fullUrl = "http://va.gov/fhir/emi/MedicationRequest/medicationrequest-outpatient-metformin"
 * entry[=].resource = medicationrequest-outpatient-metformin
 
-* entry[+].fullUrl = "http://va.gov/fhir/emi/MedicationStatement/medicationstatement-nonva-example"
-* entry[=].resource = medicationstatement-nonva-example
+* entry[+].fullUrl = "http://va.gov/fhir/emi/MedicationStatement/medicationstatement-external-example"
+* entry[=].resource = medicationstatement-external-example
 
-* entry[+].fullUrl = "http://va.gov/fhir/emi/MedicationStatement/medicationstatement-nonva-herbal-example"
-* entry[=].resource = medicationstatement-nonva-herbal-example
+* entry[+].fullUrl = "http://va.gov/fhir/emi/MedicationStatement/medicationstatement-external-herbal-example"
+* entry[=].resource = medicationstatement-external-herbal-example
 
 // Dispense
 * entry[+].fullUrl = "http://va.gov/fhir/emi/MedicationDispense/medicationdispense-example"

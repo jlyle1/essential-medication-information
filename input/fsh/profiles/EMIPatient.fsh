@@ -2,7 +2,7 @@ Profile: EMIPatient
 Parent: Patient
 Id: emi-patient
 Title: "EMI Patient"
-Description: "Patient profile for Essential Medication Information, supporting VA patient identification requirements."
+Description: "Patient profile for Essential Medication Information, supporting patient identification requirements."
 
 * ^status = #active
 * ^version = "1.0.0"
@@ -16,7 +16,8 @@ Description: "Patient profile for Essential Medication Information, supporting V
 
 * identifier contains
     ICN 0..1 MS and
-    EDIPI 0..1 MS
+    EDIPI 0..1 MS and
+    IEN 0..1 MS
 
 * identifier[ICN].system = $ICN (exactly)
 * identifier[ICN].value 1..1 MS
@@ -27,6 +28,12 @@ Description: "Patient profile for Essential Medication Information, supporting V
 * identifier[EDIPI].value 1..1 MS
 * identifier[EDIPI] ^short = "DoD Electronic Data Interchange Personal Identifier"
 * identifier[EDIPI] ^definition = "The EDIPI uniquely identifies a patient across DoD systems."
+
+* identifier[IEN].system = $VistAPatientIEN (exactly)
+* identifier[IEN].type = $IdentifierType#MR
+* identifier[IEN].value 1..1 MS
+* identifier[IEN] ^short = "VistA Internal Entry Number"
+* identifier[IEN] ^definition = "The VistA Internal Entry Number (IEN) for the patient record at a specific VA facility."
 
 // Name is required by US Core, reinforce for EMI
 * name 1..* MS
@@ -45,5 +52,6 @@ Source: EMIPatient
 Target: "http://va.gov/fhir/emi/StructureDefinition/vista-file-2"
 
 * identifier[ICN] -> "File 2, Field 991.01 (INTEGRATION CONTROL NUMBER)"
+* identifier[IEN] -> "File 2, Field .001 (Internal Entry Number)"
 * name -> "File 2, Field .01 (NAME)"
 * birthDate -> "File 2, Field .03 (DATE OF BIRTH)"

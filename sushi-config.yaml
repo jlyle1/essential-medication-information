@@ -67,7 +67,7 @@ groups:
       - StructureDefinition/emi-outpatient-medicationrequest
       - StructureDefinition/emi-inpatient-medicationrequest
       - StructureDefinition/emi-iv-medicationrequest
-      - StructureDefinition/emi-nonva-medicationstatement
+      - StructureDefinition/emi-external-medicationstatement
       - StructureDefinition/emi-medication-list
   DispenseProfiles:
     name: Dispense and Pharmacy
@@ -95,8 +95,8 @@ groups:
     name: Terminology
     description: Code systems and value sets
     resources:
-      - CodeSystem/emi-counseling-status
       - CodeSystem/emi-medication-source
-      - ValueSet/emi-counseling-status-vs
       - ValueSet/emi-medication-source-vs
       - ValueSet/emi-list-empty-reason-vs
+      - ValueSet/emi-counseling-provided-vs
+      - ValueSet/emi-counseling-understood-vs

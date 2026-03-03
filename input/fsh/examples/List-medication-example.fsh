@@ -22,13 +22,13 @@ Description: "Example of a medication list with entries from multiple sources."
 * entry[=].flag = EMIMedicationSourceCS#local-va "Local VA"
 * entry[=].date = "2024-02-01"
 
-// Non-VA medications
-* entry[+].item = Reference(medicationstatement-nonva-example)
-* entry[=].flag = EMIMedicationSourceCS#non-va "Non-VA"
+// External medications
+* entry[+].item = Reference(medicationstatement-external-example)
+* entry[=].flag = EMIMedicationSourceCS#external "External"
 * entry[=].date = "2024-01-20"
 
-* entry[+].item = Reference(medicationstatement-nonva-herbal-example)
-* entry[=].flag = EMIMedicationSourceCS#non-va "Non-VA"
+* entry[+].item = Reference(medicationstatement-external-herbal-example)
+* entry[=].flag = EMIMedicationSourceCS#external "External"
 * entry[=].date = "2024-02-15"
 
 Instance: medication-list-empty-example

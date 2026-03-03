@@ -7,7 +7,7 @@ Description: "Example of a medication counseling observation showing patient was
 * status = #final
 * category[survey] = $ObservationCategory#survey
 
-* code = $LOINC#98214-8 "Medication counseling provided"
+* code = $SCT#423076000 "Medication prescription education, guidance and counseling (procedure)"
 
 * subject = Reference(patient-example)
 * focus = Reference(medicationrequest-outpatient-lisinopril)
@@ -15,22 +15,22 @@ Description: "Example of a medication counseling observation showing patient was
 * effectiveDateTime = "2024-01-15T11:30:00-05:00"
 * performer[+].display = "VA Pharmacist"
 
-* component[wasCounseled].code = $EMICounselingStatus#was-counseled "Was Patient Counseled"
-* component[wasCounseled].valueCodeableConcept = EMICounselingStatusCS#yes "Yes"
+* component[wasCounseled].code = $SCT#408730004 "Procedure context (attribute)"
+* component[wasCounseled].valueCodeableConcept = $SCT#385658003 "Done (qualifier value)"
 
-* component[wasUnderstood].code = $EMICounselingStatus#was-understood "Was Counseling Understood"
-* component[wasUnderstood].valueCodeableConcept = EMICounselingStatusCS#yes "Yes"
+* component[wasUnderstood].code = $SCT#66216009 "Understanding, function (observable entity)"
+* component[wasUnderstood].valueCodeableConcept = $SCT#445651000124107 "Verbalizes understanding (finding)"
 
 Instance: counseling-observation-refused-example
 InstanceOf: EMIMedicationCounselingObservation
 Usage: #example
-Title: "EMI Medication Counseling Observation - Refused"
-Description: "Example of a medication counseling observation where patient refused counseling."
+Title: "EMI Medication Counseling Observation - Not Done"
+Description: "Example of a medication counseling observation where counseling was not done."
 
 * status = #final
 * category[survey] = $ObservationCategory#survey
 
-* code = $LOINC#98214-8 "Medication counseling provided"
+* code = $SCT#423076000 "Medication prescription education, guidance and counseling (procedure)"
 
 * subject = Reference(patient-example)
 * focus = Reference(medicationrequest-outpatient-metformin)
@@ -38,8 +38,8 @@ Description: "Example of a medication counseling observation where patient refus
 * effectiveDateTime = "2024-02-01T09:15:00-05:00"
 * performer[+].display = "VA Pharmacist"
 
-* component[wasCounseled].code = $EMICounselingStatus#was-counseled "Was Patient Counseled"
-* component[wasCounseled].valueCodeableConcept = EMICounselingStatusCS#refused "Refused"
+* component[wasCounseled].code = $SCT#408730004 "Procedure context (attribute)"
+* component[wasCounseled].valueCodeableConcept = $SCT#385660001 "Not done (qualifier value)"
 
-* component[wasUnderstood].code = $EMICounselingStatus#was-understood "Was Counseling Understood"
-* component[wasUnderstood].valueCodeableConcept = EMICounselingStatusCS#not-applicable "Not Applicable"
+* component[wasUnderstood].code = $SCT#66216009 "Understanding, function (observable entity)"
+* component[wasUnderstood].valueCodeableConcept = $SCT#64270008 "Disturbance of understanding (finding)"
