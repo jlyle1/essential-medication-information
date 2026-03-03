@@ -2,7 +2,7 @@ Profile: EMIRequestParameters
 Parent: Parameters
 Id: emi-request-parameters
 Title: "EMI Request Parameters"
-Description: "Parameters profile for the $medication-list operation input, including patient identifier and status horizon duration."
+Description: "Parameters profile for the $essential-medication-information-for-review operation input, including patient identifier and status horizon duration."
 
 * ^status = #active
 * ^version = "1.0.0"

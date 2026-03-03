@@ -17,7 +17,6 @@ Description: "Example of an outpatient prescription for Lisinopril from VistA Fi
 * subject = Reference(patient-example)
 * authoredOn = "2024-01-15"
 
-* requester = Reference(Practitioner/prescriber-example)
 * requester.display = "Dr. Jane Doe"
 
 * reasonCode[+] = $SCT#38341003 "Hypertensive disorder"

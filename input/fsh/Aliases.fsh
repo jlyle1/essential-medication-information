@@ -26,3 +26,5 @@ Alias: $V3ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 // EMI-specific
 Alias: $EMICounselingStatus = http://va.gov/fhir/emi/CodeSystem/counseling-status
 Alias: $EMIMedicationSource = http://va.gov/fhir/emi/CodeSystem/medication-source
+Alias: $DateLastDispensed = http://va.gov/fhir/emi/StructureDefinition/emi-date-last-dispensed
+Alias: $RemainingFills = http://va.gov/fhir/emi/StructureDefinition/emi-remaining-fills

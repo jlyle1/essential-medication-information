@@ -35,7 +35,7 @@ pages:
 menu:
   Home: index.html
   Artifacts: artifacts.html
-  Operation: OperationDefinition-medication-list.html
+  Operation: OperationDefinition-essential-medication-information-for-review.html
 
 # Parameters
 parameters:
@@ -65,7 +65,7 @@ groups:
     description: Profiles for medication information from various sources
     resources:
       - StructureDefinition/emi-outpatient-medicationrequest
-      - StructureDefinition/emi-unitdose-medicationrequest
+      - StructureDefinition/emi-inpatient-medicationrequest
       - StructureDefinition/emi-iv-medicationrequest
       - StructureDefinition/emi-nonva-medicationstatement
       - StructureDefinition/emi-medication-list
@@ -90,7 +90,7 @@ groups:
     name: Operations
     description: FHIR Operations defined by this IG
     resources:
-      - OperationDefinition/medication-list
+      - OperationDefinition/essential-medication-information-for-review
   Terminology:
     name: Terminology
     description: Code systems and value sets

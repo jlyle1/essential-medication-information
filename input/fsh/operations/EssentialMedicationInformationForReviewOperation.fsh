@@ -1,13 +1,13 @@
-Instance: medication-list
+Instance: essential-medication-information-for-review
 InstanceOf: OperationDefinition
 Usage: #definition
-Title: "EMI Medication List Operation"
+Title: "Essential Medication Information for Review Operation"
 Description: "Retrieve a patient's essential medication information including allergies, medications from all sources, dispense history, and counseling status."
 
 * status = #active
 * kind = #operation
-* name = "MedicationList"
-* code = #medication-list
+* name = "EssentialMedicationInformationForReview"
+* code = #essential-medication-information-for-review
 * system = true
 * type = false
 * instance = false
@@ -58,3 +58,4 @@ Description: "Retrieve a patient's essential medication information including al
 * parameter[=].max = "1"
 * parameter[=].documentation = "A Bundle containing the patient, allergy list, medication list, and all referenced resources (individual allergies, medications, dispenses, counseling observations, pharmacies, and practitioners)."
 * parameter[=].type = #Bundle
+* parameter[=].targetProfile = Canonical(EMIMedicationBundle)

@@ -2,7 +2,7 @@ Instance: request-parameters-example
 InstanceOf: EMIRequestParameters
 Usage: #example
 Title: "EMI Request Parameters Example"
-Description: "Example of parameters for the $medication-list operation request."
+Description: "Example of parameters for the $essential-medication-information-for-review operation request."
 
 * parameter[patient].name = "patient"
 * parameter[patient].valueIdentifier.system = "urn:oid:2.16.840.1.113883.4.349"
@@ -24,7 +24,7 @@ Instance: request-parameters-minimal-example
 InstanceOf: EMIRequestParameters
 Usage: #example
 Title: "EMI Request Parameters - Minimal"
-Description: "Example of minimal parameters for the $medication-list operation."
+Description: "Example of minimal parameters for the $essential-medication-information-for-review operation."
 
 * parameter[patient].name = "patient"
 * parameter[patient].valueReference.reference = "Patient/12345"

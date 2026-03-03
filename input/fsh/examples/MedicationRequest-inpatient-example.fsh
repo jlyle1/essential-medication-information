@@ -1,7 +1,7 @@
 Instance: medicationrequest-unitdose-example
-InstanceOf: EMIUnitDoseMedicationRequest
+InstanceOf: EMIInpatientMedicationRequest
 Usage: #example
-Title: "EMI Unit Dose MedicationRequest Example"
+Title: "EMI Inpatient MedicationRequest Example"
 Description: "Example of an inpatient unit dose medication order from VistA File 55.06."
 
 * identifier[orderNumber].system = "http://va.gov/fhir/emi/sid/order-number"

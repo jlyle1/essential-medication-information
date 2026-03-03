@@ -45,13 +45,11 @@ Description: "List profile for patient medications in Essential Medication Infor
 
 // Entries - can reference any medication resource type
 * entry MS
-* entry.item only Reference(EMIOutpatientMedicationRequest or EMIUnitDoseMedicationRequest or EMIIVMedicationRequest or EMINonVAMedicationStatement)
+* entry.item only Reference(EMIOutpatientMedicationRequest or EMIInpatientMedicationRequest or EMIIVMedicationRequest or EMINonVAMedicationStatement)
 * entry.item ^short = "Medication entry from any source"
 * entry.flag MS
 * entry.flag from EMIMedicationSourceVS (preferred)
 * entry.flag ^short = "Source of medication (local VA, remote VA, non-VA)"
-* entry.date MS
-* entry.date ^short = "Date associated with entry"
 
 // Invariant: must have entries or emptyReason
 * obeys emi-med-list-content

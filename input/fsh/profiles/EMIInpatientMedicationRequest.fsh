@@ -1,7 +1,7 @@
-Profile: EMIUnitDoseMedicationRequest
+Profile: EMIInpatientMedicationRequest
 Parent: $USCoreMedicationRequest
-Id: emi-unitdose-medicationrequest
-Title: "EMI Unit Dose MedicationRequest"
+Id: emi-inpatient-medicationrequest
+Title: "EMI Inpatient MedicationRequest"
 Description: "Inpatient unit dose medication profile for Essential Medication Information, representing VistA File 55.06 orders."
 
 * ^status = #active
@@ -61,7 +61,7 @@ Description: "Inpatient unit dose medication profile for Essential Medication In
 Mapping: VistAFile55-06
 Id: vista-file-55-06
 Title: "VistA Unit Dose File (55.06)"
-Source: EMIUnitDoseMedicationRequest
+Source: EMIInpatientMedicationRequest
 Target: "http://va.gov/fhir/emi/StructureDefinition/vista-file-55-06"
 
 * identifier[orderNumber] -> "File 55.06, Field .01 (ORDER NUMBER)"

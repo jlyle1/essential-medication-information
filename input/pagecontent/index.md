@@ -1,38 +1,48 @@
 ### Essential Medication Information Implementation Guide
 
-This implementation guide defines FHIR profiles and operations for exchanging essential medication information to support patient care in VA healthcare settings. It implements a subset of VHA Directive 1164 focused on database query use cases.
+This implementation guide defines FHIR profiles and an operation for exchanging essential medication information to support patient care in healthcare settings provided or funded by the Veterans Administration.
+
+The purpose of this payload is to exchange known information between systems and to providers for evaluation, e.g., as input to history-taking and medication reconciliation. 
+
+The foundation of this specification is [VHA Directive 1164, Essential Medication Information](https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=11372), though it does not support many of the patient-facing requirements of that policy such as refill instructions, space for notes, or a glossary of terms.
 
 ### Scope
 
-This IG supports querying a database for essential medication information, including:
+This guide is compatible with the US Core FHIR profiles, but it does not inherit constraints from the US Core IG. The Patient and Allergy profiles in US Core include specifications beyond the interest of the EIM domain. Implementers may choose to add these capabilities to exising US-Core-conformant capabilities or to provide a purpose-built interface for EMI.
 
-- **Patient Information**: Name, date of birth, identifiers (ICN, EDIPI)
-- **Allergy Information**: Substances and reactions
-- **Medication Information**: From multiple sources including local VA, remote VA, and non-VA medications
-- **Dispense Information**: Last released date, quantity, pharmacy details
-- **Counseling Information**: Whether patient was counseled and demonstrated understanding
+This IG supports querying for essential medication information, including:
 
-### Key Profiles
+| Category | Data Element |
+|----------|--------------|
+| Patient | Name |
+| Patient | Date of birth |
+| Patient | Identifiers (ICN, EDIPI) |
+| Allergy | Substance |
+| Allergy | Reaction |
+| Medication | Drug name with form and strength|
+| Medication | Sig |
+| Medication | Status |
+| Medication | Source (Outpatient, Inpatient, Reported) |
+| Dispense | Last released date |
+| Dispense | Quantity |
+| Dispense | Remaining fills |
+| Dispense | Pharmacy |
+| Counseling | Counseling provided |
+| Counseling | Patient understanding demonstrated |
 
-| Profile | Description | VistA Source |
-|---------|-------------|--------------|
-| [EMIPatient](StructureDefinition-emi-patient.html) | VA patient with ICN/EDIPI identifiers | File 2 |
-| [EMIAllergyIntolerance](StructureDefinition-emi-allergyintolerance.html) | Allergy/adverse reaction | File 120.8 |
-| [EMIOutpatientMedicationRequest](StructureDefinition-emi-outpatient-medicationrequest.html) | Outpatient prescription | File 52 |
-| [EMIUnitDoseMedicationRequest](StructureDefinition-emi-unitdose-medicationrequest.html) | Inpatient unit dose medication | File 55.06 |
-| [EMIIVMedicationRequest](StructureDefinition-emi-iv-medicationrequest.html) | Inpatient IV medication | File 55.01 |
-| [EMINonVAMedicationStatement](StructureDefinition-emi-nonva-medicationstatement.html) | Non-VA medication | File 55.05 |
-| [EMIMedicationDispense](StructureDefinition-emi-medicationdispense.html) | Medication dispense event | File 52 refills |
-| [EMIPharmacyOrganization](StructureDefinition-emi-pharmacy-organization.html) | Dispensing pharmacy | Institution data |
-| [EMIMedicationCounselingObservation](StructureDefinition-emi-medication-counseling-observation.html) | Counseling status | File 52 fields 41, 42 |
-| [EMIAllergyList](StructureDefinition-emi-allergy-list.html) | Patient allergy list | - |
-| [EMIMedicationList](StructureDefinition-emi-medication-list.html) | Patient medication list | - |
-| [EMIMedicationBundle](StructureDefinition-emi-medication-bundle.html) | Response bundle | - |
-| [EMIRequestParameters](StructureDefinition-emi-request-parameters.html) | Operation input parameters | - |
+### Levels of constraint
+There are several tactics for indicating that a given data element is desired. 
+1. Cardinality: Elements may be made mandatory with a minimum cardinality of 1. Implementers with incomplete records may send null values, but not for some coded types.
+2. Invariant-error: Invariants can be constructed to prohibit, e.g., sending null values.
+3. Invariant-warning: Invariants can be constructed to notify senders and receivers about divergences from expectations.
+4. Must-Support: Implementers are expected to send the data if available. This option can only be tested with explicit test scripts; it cannot be enforced at runtime.
+5. PIQI: The Patient Information Quality Initiative defines tools and processes for assessing and sharing quality data for specific scenarios.
+
+We avoid tactics 1 & 2 as potentially filtering clinically significant information. We adopt 3, 4, and 5 in a layered approach to maximize the visibility of our requirements.
 
 ### Operation
 
-The [$medication-list](OperationDefinition-medication-list.html) operation retrieves a patient's complete essential medication information as a Bundle.
+The guide defines the [$essential-medication-information-for-review](OperationDefinition-essential-medication-information-for-review.html) operation to retrieve a patient's complete essential medication information as a Bundle. This operation is defined as a FHIR Restful operation.
 
 ### Background
 
@@ -43,4 +53,4 @@ This implementation guide is informed by:
 
 ### Authors
 
-Department of Veterans Affairs / Pharmacy Benefits Management Services (VA/PBM)
+Department of Veterans Affairs / Pharmacy Benefits Management Services (VA/PBM) & Knowledge-Based Systems (VA/KBS)

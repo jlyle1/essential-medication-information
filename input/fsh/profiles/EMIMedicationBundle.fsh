@@ -2,7 +2,7 @@ Profile: EMIMedicationBundle
 Parent: Bundle
 Id: emi-medication-bundle
 Title: "EMI Medication Bundle"
-Description: "Bundle profile for Essential Medication Information, serving as the response to the $medication-list operation. Contains patient, allergy list, medication list, and all referenced resources."
+Description: "Bundle profile for Essential Medication Information, serving as the response to the $essential-medication-information-for-review operation. Contains patient, allergy list, medication list, and all referenced resources."
 
 * ^status = #active
 * ^version = "1.0.0"
@@ -21,7 +21,7 @@ Description: "Bundle profile for Essential Medication Information, serving as th
 // Entries
 * entry 1..* MS
 * entry ^short = "Resources in the medication information response"
-* entry ^slicing.discriminator.type = #type
+* entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.ordered = false
