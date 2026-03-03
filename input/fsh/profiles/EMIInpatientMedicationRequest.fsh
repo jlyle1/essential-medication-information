@@ -1,5 +1,5 @@
 Profile: EMIInpatientMedicationRequest
-Parent: $USCoreMedicationRequest
+Parent: MedicationRequest
 Id: emi-inpatient-medicationrequest
 Title: "EMI Inpatient MedicationRequest"
 Description: "Inpatient unit dose medication profile for Essential Medication Information, representing VistA File 55.06 orders."

@@ -1,5 +1,5 @@
 Profile: EMIPatient
-Parent: $USCorePatient
+Parent: Patient
 Id: emi-patient
 Title: "EMI Patient"
 Description: "Patient profile for Essential Medication Information, supporting VA patient identification requirements."

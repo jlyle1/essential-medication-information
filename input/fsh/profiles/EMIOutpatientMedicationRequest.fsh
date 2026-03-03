@@ -1,5 +1,5 @@
 Profile: EMIOutpatientMedicationRequest
-Parent: $USCoreMedicationRequest
+Parent: MedicationRequest
 Id: emi-outpatient-medicationrequest
 Title: "EMI Outpatient MedicationRequest"
 Description: "Outpatient prescription profile for Essential Medication Information, representing VistA File 52 prescriptions."

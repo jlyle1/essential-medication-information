@@ -1,5 +1,5 @@
 Profile: EMIIVMedicationRequest
-Parent: $USCoreMedicationRequest
+Parent: MedicationRequest
 Id: emi-iv-medicationrequest
 Title: "EMI IV MedicationRequest"
 Description: "Inpatient IV medication profile for Essential Medication Information, representing VistA File 55.01 IV orders."

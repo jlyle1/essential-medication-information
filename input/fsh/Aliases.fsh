@@ -1,7 +1,4 @@
-// US Core Profiles
-Alias: $USCorePatient = http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
-Alias: $USCoreAllergyIntolerance = http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance
-Alias: $USCoreMedicationRequest = http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest
+// Base FHIR Resources (US Core dependency removed)
 
 // Terminology
 Alias: $RxNorm = http://www.nlm.nih.gov/research/umls/rxnorm

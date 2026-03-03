@@ -21,8 +21,8 @@ publisher:
   email: pbm@va.gov
 
 # Dependencies
-dependencies:
-  hl7.fhir.us.core: 6.1.0
+# dependencies:
+#   hl7.fhir.us.core: 6.1.0
 
 # Pages
 pages:

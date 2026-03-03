@@ -1,5 +1,5 @@
 Profile: EMIAllergyIntolerance
-Parent: $USCoreAllergyIntolerance
+Parent: AllergyIntolerance
 Id: emi-allergyintolerance
 Title: "EMI AllergyIntolerance"
 Description: "Allergy/adverse reaction profile for Essential Medication Information, capturing substance and reaction information from VistA."
