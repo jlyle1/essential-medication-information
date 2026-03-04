@@ -4,6 +4,8 @@ Usage: #example
 Title: "EMI Inpatient MedicationRequest Example"
 Description: "Example of an inpatient unit dose medication order from VistA File 55.06."
 
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
 * identifier[orderNumber].system = "http://va.gov/fhir/emi/sid/order-number"
 * identifier[orderNumber].value = "UD789012"
 
@@ -28,6 +30,8 @@ InstanceOf: EMIIVMedicationRequest
 Usage: #example
 Title: "EMI IV MedicationRequest Example"
 Description: "Example of an inpatient IV medication order from VistA File 55.01."
+
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
 * identifier[orderNumber].system = "http://va.gov/fhir/emi/sid/order-number"
 * identifier[orderNumber].value = "IV456789"

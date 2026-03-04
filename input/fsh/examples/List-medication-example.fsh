@@ -4,6 +4,8 @@ Usage: #example
 Title: "EMI Medication List Example"
 Description: "Example of a medication list with entries from multiple sources."
 
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
 * status = #current
 * mode = #snapshot
 * title = "Patient Medication List"
@@ -36,6 +38,8 @@ InstanceOf: EMIMedicationList
 Usage: #example
 Title: "EMI Medication List Example - No Medications"
 Description: "Example of an empty medication list."
+
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
 * status = #current
 * mode = #snapshot

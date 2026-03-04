@@ -4,6 +4,8 @@ Usage: #example
 Title: "EMI Patient Example"
 Description: "Example of a patient with ICN identifier."
 
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
 * identifier[ICN].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[ICN].value = "1012345678V123456"
 

@@ -4,6 +4,8 @@ Usage: #example
 Title: "EMI External MedicationStatement Example"
 Description: "Example of an external medication (patient-reported OTC) from VistA File 55.05."
 
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
 * status = #active
 * category = $MedicationStatementCategory#community
 
@@ -28,6 +30,8 @@ InstanceOf: EMIExternalMedicationStatement
 Usage: #example
 Title: "EMI External MedicationStatement - Herbal"
 Description: "Example of an external herbal supplement."
+
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
 * status = #active
 * category = $MedicationStatementCategory#community

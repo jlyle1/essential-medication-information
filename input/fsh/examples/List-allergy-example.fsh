@@ -4,6 +4,8 @@ Usage: #example
 Title: "EMI Allergy List Example"
 Description: "Example of an allergy list with entries."
 
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
 * status = #current
 * mode = #snapshot
 * title = "Patient Allergy List"
@@ -21,6 +23,8 @@ InstanceOf: EMIAllergyList
 Usage: #example
 Title: "EMI Allergy List Example - No Known Allergies"
 Description: "Example of an empty allergy list with no known allergies."
+
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
 * status = #current
 * mode = #snapshot

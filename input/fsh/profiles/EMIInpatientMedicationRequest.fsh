@@ -7,6 +7,11 @@ Description: "Inpatient unit dose medication profile for Essential Medication In
 * ^status = #active
 * ^version = "1.0.0"
 
+// Source system
+* meta.source 1..1 MS
+* meta.source ^short = "Source system (sta3n for VA)"
+* meta.source ^definition = "URI identifying the source system. For VA, use format http://va.gov/fhir/sid/sta3n/{sta3n} (e.g., http://va.gov/fhir/sid/sta3n/520)."
+
 // Identifier - order number
 * identifier 1..* MS
 * identifier ^slicing.discriminator.type = #pattern
@@ -22,8 +27,8 @@ Description: "Inpatient unit dose medication profile for Essential Medication In
 // Status
 * status MS
 * status ^short = "active | on-hold | cancelled | completed | entered-in-error | stopped"
-* status.extension contains $AlternateCodes 0..1 MS
-* status.extension[$AlternateCodes] ^short = "VistA pharmacy order status (File 55.06, Field 28)"
+* status.extension contains $AlternateCodes named alternateCodes 0..1 MS
+* status.extension[alternateCodes] ^short = "VistA pharmacy order status (File 55.06, Field 28)"
 
 // Intent - always order
 * intent = #order (exactly)

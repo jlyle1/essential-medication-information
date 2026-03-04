@@ -7,11 +7,16 @@ Description: "External medication profile for Essential Medication Information, 
 * ^status = #active
 * ^version = "1.0.0"
 
+// Source system
+* meta.source 1..1 MS
+* meta.source ^short = "Source system (sta3n for VA)"
+* meta.source ^definition = "URI identifying the source system. For VA, use format http://va.gov/fhir/sid/sta3n/{sta3n} (e.g., http://va.gov/fhir/sid/sta3n/520)."
+
 // Status required
 * status 1..1 MS
 * status ^short = "active | completed | entered-in-error | intended | stopped | on-hold | unknown | not-taken"
-* status.extension contains $AlternateCodes 0..1 MS
-* status.extension[$AlternateCodes] ^short = "VistA pharmacy order status (File 55.05, Field 5)"
+* status.extension contains $AlternateCodes named alternateCodes 0..1 MS
+* status.extension[alternateCodes] ^short = "VistA pharmacy order status (File 55.05, Field 5)"
 
 // Category - community (external)
 * category MS

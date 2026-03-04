@@ -4,6 +4,8 @@ Usage: #example
 Title: "EMI Allergy Example - Penicillin"
 Description: "Example of a penicillin allergy with rash reaction."
 
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
 * type = #allergy
@@ -23,6 +25,8 @@ InstanceOf: EMIAllergyIntolerance
 Usage: #example
 Title: "EMI Allergy Example - NSAID Intolerance"
 Description: "Example of an NSAID intolerance with GI upset."
+
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed

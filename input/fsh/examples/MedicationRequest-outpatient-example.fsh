@@ -4,6 +4,8 @@ Usage: #example
 Title: "EMI Outpatient MedicationRequest - Lisinopril"
 Description: "Example of an outpatient prescription for Lisinopril from VistA File 52."
 
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
 * identifier[rxNumber].system = "http://va.gov/fhir/emi/sid/rx-number"
 * identifier[rxNumber].value = "RX12345678"
 
@@ -45,6 +47,8 @@ InstanceOf: EMIOutpatientMedicationRequest
 Usage: #example
 Title: "EMI Outpatient MedicationRequest - Metformin"
 Description: "Example of an outpatient prescription for Metformin."
+
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
 * identifier[rxNumber].system = "http://va.gov/fhir/emi/sid/rx-number"
 * identifier[rxNumber].value = "RX12345679"

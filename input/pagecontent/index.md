@@ -8,12 +8,13 @@ The foundation of this specification is [VHA Directive 1164, Essential Medicatio
 
 ### Scope
 
+#### Data
 This guide is compatible with the US Core FHIR profiles, but it does not inherit constraints from the US Core IG. The Patient and Allergy profiles in US Core include specifications beyond the interest of the EIM domain. Implementers may choose to add these capabilities to exising US-Core-conformant capabilities or to provide a purpose-built interface for EMI.
 
 This IG supports querying for essential medication information, including:
 
 | Category | Data Element |
-|----------|--------------|
+|:---------|:--------------|
 | Patient | Name |
 | Patient | Date of birth |
 | Patient | Identifiers (ICN, EDIPI) |
@@ -30,6 +31,12 @@ This IG supports querying for essential medication information, including:
 | Counseling | Counseling provided |
 | Counseling | Patient understanding demonstrated |
 
+### Operation
+
+The guide defines the [$essential-medication-information-for-review](OperationDefinition-essential-medication-information-for-review.html) operation to retrieve a patient's complete essential medication information as a Bundle. This operation is defined as a FHIR Restful operation.
+
+It may be necessary to iterate or federate queries, e.g., in a network, or if multiple external partners are known. Reconciliation of versions is not addressed here.
+
 ### Levels of constraint
 There are several tactics for indicating that a given data element is desired. 
 1. Cardinality: Elements may be made mandatory with a minimum cardinality of 1. Implementers with incomplete records may send null values, but not for some coded types.
@@ -40,9 +47,6 @@ There are several tactics for indicating that a given data element is desired.
 
 We avoid tactics 1 & 2 as potentially filtering clinically significant information. We adopt 3, 4, and 5 in a layered approach to maximize the visibility of our requirements.
 
-### Operation
-
-The guide defines the [$essential-medication-information-for-review](OperationDefinition-essential-medication-information-for-review.html) operation to retrieve a patient's complete essential medication information as a Bundle. This operation is defined as a FHIR Restful operation.
 
 ### Background
 

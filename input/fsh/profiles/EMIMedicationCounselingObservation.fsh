@@ -7,6 +7,11 @@ Description: "Observation profile for medication counseling status, capturing wh
 * ^status = #active
 * ^version = "1.0.0"
 
+// Source system
+* meta.source 1..1 MS
+* meta.source ^short = "Source system (sta3n for VA)"
+* meta.source ^definition = "URI identifying the source system. For VA, use format http://va.gov/fhir/sid/sta3n/{sta3n} (e.g., http://va.gov/fhir/sid/sta3n/520)."
+
 // Status
 * status MS
 * status = #final

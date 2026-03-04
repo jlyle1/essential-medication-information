@@ -7,6 +7,11 @@ Description: "Outpatient prescription profile for Essential Medication Informati
 * ^status = #active
 * ^version = "1.0.0"
 
+// Source system
+* meta.source 1..1 MS
+* meta.source ^short = "Source system (sta3n for VA)"
+* meta.source ^definition = "URI identifying the source system. For VA, use format http://va.gov/fhir/sid/sta3n/{sta3n} (e.g., http://va.gov/fhir/sid/sta3n/520)."
+
 // Extensions for dispense summary (alternative to sending MedicationDispense resources)
 * extension contains
     $DateLastDispensed named dateLastDispensed 0..1 MS and
@@ -30,8 +35,8 @@ Description: "Outpatient prescription profile for Essential Medication Informati
 * status MS
 * status ^short = "active | on-hold | cancelled | completed | entered-in-error | stopped | draft"
 * status ^definition = "Current status of the prescription. Use alternate-codes extension for original VistA status."
-* status.extension contains $AlternateCodes 0..1 MS
-* status.extension[$AlternateCodes] ^short = "VistA pharmacy order status (File 52, Field 100)"
+* status.extension contains $AlternateCodes named alternateCodes 0..1 MS
+* status.extension[alternateCodes] ^short = "VistA pharmacy order status (File 52, Field 100)"
 
 // Intent - always order for prescriptions
 * intent = #order (exactly)

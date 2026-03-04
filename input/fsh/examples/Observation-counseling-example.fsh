@@ -4,6 +4,8 @@ Usage: #example
 Title: "EMI Medication Counseling Observation Example"
 Description: "Example of a medication counseling observation showing patient was counseled and understood."
 
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
 * status = #final
 * category[survey] = $ObservationCategory#survey
 
@@ -26,6 +28,8 @@ InstanceOf: EMIMedicationCounselingObservation
 Usage: #example
 Title: "EMI Medication Counseling Observation - Not Done"
 Description: "Example of a medication counseling observation where counseling was not done."
+
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
 * status = #final
 * category[survey] = $ObservationCategory#survey
