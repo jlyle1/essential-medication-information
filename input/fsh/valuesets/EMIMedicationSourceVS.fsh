@@ -4,5 +4,6 @@ Title: "EMI Medication Source Value Set"
 Description: "Value set for identifying the source of medications in the medication list."
 
 * ^status = #active
+* ^experimental = true
 
 * include codes from system EMIMedicationSourceCS

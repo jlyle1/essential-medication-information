@@ -14,7 +14,7 @@ Description: "Example of a penicillin allergy with rash reaction."
 * code = $RxNorm#7984 "Penicillin V"
 * code.text = "Penicillin"
 
-* patient = Reference(patient-example)
+* patient = Reference(testpatient1-patient)
 
 * reaction[+].manifestation[+] = $SCT#271807003 "Eruption of skin"
 * reaction[=].manifestation[=].text = "Rash"
@@ -33,10 +33,10 @@ Description: "Example of an NSAID intolerance with GI upset."
 * type = #intolerance
 * category[+] = #medication
 
-* code = $RxNorm#850789 "Ibuprofen"
+* code = $RxNorm#5640 "Ibuprofen"
 * code.text = "Ibuprofen"
 
-* patient = Reference(patient-example)
+* patient = Reference(testpatient1-patient)
 
 * reaction[+].manifestation[+] = $SCT#422587007 "Nausea"
 * reaction[=].manifestation[=].text = "GI upset"

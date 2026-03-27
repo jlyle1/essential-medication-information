@@ -7,8 +7,11 @@ Description: "Allergy/adverse reaction profile for Essential Medication Informat
 * ^status = #active
 * ^version = "1.0.0"
 
+// Invariants
+* obeys emi-allergy-1
+
 // Source system
-* meta.source 1..1 MS
+* meta.source 0..1 MS
 * meta.source ^short = "Source system (sta3n for VA)"
 * meta.source ^definition = "URI identifying the source system. For VA, use format http://va.gov/fhir/sid/sta3n/{sta3n} (e.g., http://va.gov/fhir/sid/sta3n/520)."
 
@@ -35,10 +38,6 @@ Description: "Allergy/adverse reaction profile for Essential Medication Informat
 // Verification status
 * verificationStatus MS
 
-// Type (allergy vs intolerance)
-* type MS
-* type ^short = "allergy | intolerance"
-
 // Mappings to VistA File 120.8
 Mapping: VistAFile120-8
 Id: vista-file-120-8
@@ -48,6 +47,11 @@ Target: "http://va.gov/fhir/emi/StructureDefinition/vista-file-120-8"
 
 * code -> "File 120.8, Field .02 (REACTANT) or Field 1 (GMR ALLERGY)"
 * reaction.manifestation -> "File 120.8, Field 10 (REACTIONS sub-file 120.81)"
-* type -> "File 120.8, Field 3.1 (ALLERGY TYPE)"
 * clinicalStatus -> "File 120.8, Field 5 (HISTORICAL/OBSERVED) combined with context"
 * verificationStatus -> "File 120.8, Field 6 (MECHANISM) and verification context"
+
+// Invariants
+Invariant: emi-allergy-1
+Severity: #warning
+Description: "meta.source SHOULD be populated to identify the originating system for allergy data"
+Expression: "meta.source.exists()"

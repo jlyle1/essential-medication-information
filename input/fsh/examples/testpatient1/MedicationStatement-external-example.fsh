@@ -9,15 +9,15 @@ Description: "Example of an external medication (patient-reported OTC) from Vist
 * status = #active
 * category = $MedicationStatementCategory#community
 
-* medicationCodeableConcept = $RxNorm#198436 "aspirin 325 MG Oral Tablet"
-* medicationCodeableConcept.text = "ASPIRIN 325MG (OTC)"
+* medicationCodeableConcept = $RxNorm#198436 "acetaminophen 325 MG Oral Capsule"
+* medicationCodeableConcept.text = "ACETAMINOPHEN 325MG CAP (OTC)"
 
-* subject = Reference(patient-example)
+* subject = Reference(testpatient1-patient)
 * dateAsserted = "2024-01-20"
-* informationSource = Reference(patient-example)
+* informationSource = Reference(testpatient1-patient)
 * informationSource.display = "Patient-reported"
 
-* reasonCode[+].text = "Heart health"
+* reasonCode[+].text = "Pain relief"
 
 * dosage[+].text = "Take 1 tablet daily"
 * dosage[=].route = $SCT#26643006 "Oral route"
@@ -37,11 +37,10 @@ Description: "Example of an external herbal supplement."
 * category = $MedicationStatementCategory#community
 
 * medicationCodeableConcept.text = "Fish Oil 1000mg"
-* medicationCodeableConcept.coding[+].display = "Fish Oil Supplement"
 
-* subject = Reference(patient-example)
+* subject = Reference(testpatient1-patient)
 * dateAsserted = "2024-02-15"
-* informationSource = Reference(patient-example)
+* informationSource = Reference(testpatient1-patient)
 
 * reasonCode[+].text = "Cholesterol support"
 

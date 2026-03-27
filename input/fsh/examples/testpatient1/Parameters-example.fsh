@@ -27,4 +27,4 @@ Title: "EMI Request Parameters - Minimal"
 Description: "Example of minimal parameters for the $essential-medication-information-for-review operation."
 
 * parameter[patient].name = "patient"
-* parameter[patient].valueReference.reference = "Patient/12345"
+* parameter[patient].valueReference = Reference(testpatient1-patient)

@@ -1,0 +1,64 @@
+@startuml emi-operation-sequence
+
+title Essential Medication Information for Review Operation
+
+skinparam sequenceArrowThickness 2
+skinparam participantPadding 20
+skinparam boxPadding 10
+
+actor "Provider" as Provider
+participant "FHIR Server" as Server
+participant "EMI Assembly\nService" as Assembly
+database "Clinical Data\nSources" as Data
+
+Provider -> Server : GET /Patient/$essential-medication-information-for-review\n?identifier=http://va.gov/fhir/sid/icn|1234567890V123456
+activate Server
+
+Server -> Server : Resolve Patient by identifier
+
+Server -> Assembly : Assemble EMI Bundle
+activate Assembly
+
+Assembly -> Data : Query Patient
+Assembly <-- Data : Patient
+
+Assembly -> Data : Query Allergies 
+Assembly <-- Data : AllergyIntolerance[]
+
+Assembly -> Data : Query Outpatient Meds 
+Assembly <-- Data : MedicationRequest[]
+
+Assembly -> Data : Query Inpatient Meds 
+Assembly <-- Data : MedicationRequest[]
+
+Assembly -> Data : Query IV Meds 
+Assembly <-- Data : MedicationRequest[]
+
+Assembly -> Data : Query External Meds
+Assembly <-- Data : MedicationStatement[]
+
+Assembly -> Data : Query Dispenses 
+Assembly <-- Data : MedicationDispense[]
+
+Assembly -> Data : Query Counseling Status
+Assembly <-- Data : Observation[]
+
+Assembly -> Assembly : Assemble Bundle
+
+Server <-- Assembly : EMIMedicationBundle
+deactivate Assembly
+
+Provider <-- Server : 200 OK\nEMIMedicationBundle
+deactivate Server
+
+note right of Provider
+  Bundle contains:
+  - Patient
+  - AllergyIntolerance resources
+  - MedicationRequest/Statement resources
+  - MedicationDispense resources
+  - Counseling Observation resources
+  - Pharmacy Organization resources
+end note
+
+@enduml

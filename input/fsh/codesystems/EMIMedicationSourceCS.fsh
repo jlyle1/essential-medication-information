@@ -4,6 +4,7 @@ Title: "EMI Medication Source Code System"
 Description: "Code system identifying the source of a medication entry (local VA, remote VA, external, pending, etc.)."
 
 * ^status = #active
+* ^experimental = true
 * ^caseSensitive = true
 * ^content = #complete
 

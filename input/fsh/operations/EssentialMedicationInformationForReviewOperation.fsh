@@ -8,19 +8,12 @@ Description: "Retrieve a patient's essential medication information including al
 * kind = #operation
 * name = "EssentialMedicationInformationForReview"
 * code = #essential-medication-information-for-review
-* system = true
+* resource = #Patient
+* system = false
 * type = false
-* instance = false
+* instance = true
 
 // Input parameters
-* parameter[+].name = #patient
-* parameter[=].use = #in
-* parameter[=].min = 1
-* parameter[=].max = "1"
-* parameter[=].documentation = "The patient identifier (ICN or EDIPI) or reference for whom to retrieve medication information."
-* parameter[=].type = #string
-* parameter[=].searchType = #reference
-
 * parameter[+].name = #statusHorizonDuration
 * parameter[=].use = #in
 * parameter[=].min = 0

@@ -4,12 +4,14 @@ Usage: #example
 Title: "EMI MedicationDispense Example"
 Description: "Example of a medication dispense showing last released date."
 
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
 * status = #completed
 
 * medicationCodeableConcept = $RxNorm#314076 "lisinopril 10 MG Oral Tablet"
 * medicationCodeableConcept.text = "LISINOPRIL 10MG TAB"
 
-* subject = Reference(patient-example)
+* subject = Reference(testpatient1-patient)
 * authorizingPrescription = Reference(medicationrequest-outpatient-lisinopril)
 
 * quantity.value = 90

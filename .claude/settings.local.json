@@ -8,7 +8,10 @@
       "Bash(cmd /c \"_genonce.bat\")",
       "Bash(ls:*)",
       "Bash(dir \"c:\\\\repos\\\\essential-medication-information\\\\input-cache\")",
-      "Bash(java:*)"
+      "Bash(java:*)",
+      "Bash(powershell -Command \"Import-Csv -Path ''C:\\\\repos\\\\essential-medication-information\\\\.ignore\\\\testPatient.xlsx''\")",
+      "Bash(python:*)",
+      "Bash(pip install:*)"
     ]
   }
 }

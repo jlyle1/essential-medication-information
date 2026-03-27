@@ -8,7 +8,7 @@ Description: "Patient profile for Essential Medication Information, supporting p
 * ^version = "1.0.0"
 
 // Source system
-* meta.source 1..1 MS
+* meta.source 0..1 MS
 * meta.source ^short = "Source system (sta3n for VA)"
 * meta.source ^definition = "URI identifying the source system. For VA, use format http://va.gov/fhir/sid/sta3n/{sta3n} (e.g., http://va.gov/fhir/sid/sta3n/520)."
 
@@ -46,11 +46,13 @@ Description: "Patient profile for Essential Medication Information, supporting p
 * name.given 1..* MS
 
 // Date of birth required
-* birthDate 1..1 MS
+* birthDate 0..1 MS
 * birthDate ^short = "Patient date of birth"
 
-// Invariant: should have ICN or EDIPI
+// Invariants
 * obeys emi-pat-1
+* obeys emi-pat-2
+* obeys emi-pat-3
 
 // Mappings to VistA File 2
 Mapping: VistAFile2
@@ -69,3 +71,13 @@ Description: "Patient should have an ICN or EDIPI identifier"
 Severity: #warning
 Expression: "identifier.where(system = 'urn:oid:2.16.840.1.113883.4.349').exists() or identifier.where(system = 'urn:oid:2.16.840.1.113883.3.42.10001.100001.12').exists()"
 XPath: "f:identifier[f:system/@value='urn:oid:2.16.840.1.113883.4.349'] or f:identifier[f:system/@value='urn:oid:2.16.840.1.113883.3.42.10001.100001.12']"
+
+Invariant: emi-pat-2
+Severity: #warning
+Description: "meta.source SHOULD be populated to identify the originating system for patient data"
+Expression: "meta.source.exists()"
+
+Invariant: emi-pat-3
+Severity: #warning
+Description: "birthDate SHOULD be populated for patient identification"
+Expression: "birthDate.exists()"

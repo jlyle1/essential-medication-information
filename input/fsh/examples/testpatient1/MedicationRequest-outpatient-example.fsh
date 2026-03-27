@@ -6,8 +6,8 @@ Description: "Example of an outpatient prescription for Lisinopril from VistA Fi
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
-* identifier[rxNumber].system = "http://va.gov/fhir/emi/sid/rx-number"
-* identifier[rxNumber].value = "RX12345678"
+* identifier[rxNumber].system = "http://va.gov/fhir/sid/648/52-.01"
+* identifier[rxNumber].value = "12345678"
 
 * status = #active
 * intent = #order
@@ -16,7 +16,7 @@ Description: "Example of an outpatient prescription for Lisinopril from VistA Fi
 * medicationCodeableConcept = $RxNorm#314076 "lisinopril 10 MG Oral Tablet"
 * medicationCodeableConcept.text = "LISINOPRIL 10MG TAB"
 
-* subject = Reference(patient-example)
+* subject = Reference(testpatient1-patient)
 * authoredOn = "2024-01-15"
 
 * requester.display = "Dr. Jane Doe"
@@ -42,6 +42,8 @@ Description: "Example of an outpatient prescription for Lisinopril from VistA Fi
 * dispenseRequest.validityPeriod.start = "2024-01-15"
 * dispenseRequest.validityPeriod.end = "2025-01-15"
 
+* supportingInformation[counseling] = Reference(counseling-procedure-example)
+
 Instance: medicationrequest-outpatient-metformin
 InstanceOf: EMIOutpatientMedicationRequest
 Usage: #example
@@ -50,17 +52,17 @@ Description: "Example of an outpatient prescription for Metformin."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
-* identifier[rxNumber].system = "http://va.gov/fhir/emi/sid/rx-number"
-* identifier[rxNumber].value = "RX12345679"
+* identifier[rxNumber].system = "http://va.gov/fhir/sid/648/52-.01"
+* identifier[rxNumber].value = "12345679"
 
 * status = #active
 * intent = #order
 * category[outpatient] = $MedicationRequestCategory#outpatient
 
-* medicationCodeableConcept = $RxNorm#861004 "metformin hydrochloride 500 MG Oral Tablet"
-* medicationCodeableConcept.text = "METFORMIN 500MG TAB"
+* medicationCodeableConcept = $RxNorm#861004 "metformin hydrochloride 1000 MG Oral Tablet"
+* medicationCodeableConcept.text = "METFORMIN 1000MG TAB"
 
-* subject = Reference(patient-example)
+* subject = Reference(testpatient1-patient)
 * authoredOn = "2024-02-01"
 
 * requester.display = "Dr. Jane Doe"
@@ -79,4 +81,7 @@ Description: "Example of an outpatient prescription for Metformin."
 * dispenseRequest.expectedSupplyDuration.system = $UCUM
 * dispenseRequest.expectedSupplyDuration.code = #d
 * dispenseRequest.numberOfRepeatsAllowed = 3
+* dispenseRequest.validityPeriod.start = "2024-02-01"
 * dispenseRequest.validityPeriod.end = "2025-02-01"
+
+* supportingInformation[counseling] = Reference(counseling-procedure-notdone-example)

@@ -7,6 +7,16 @@ Description: "Pharmacy organization profile for Essential Medication Information
 * ^status = #active
 * ^version = "1.0.0"
 
+// Invariants
+* obeys emi-pharm-1
+* obeys emi-pharm-2
+* obeys emi-pharm-3
+
+// Source system
+* meta.source 0..1 MS
+* meta.source ^short = "Source system (sta3n for VA)"
+* meta.source ^definition = "URI identifying the source system. For VA, use format http://va.gov/fhir/sid/sta3n/{sta3n} (e.g., http://va.gov/fhir/sid/sta3n/520)."
+
 // Name required
 * name 1..1 MS
 * name ^short = "Pharmacy name"
@@ -18,11 +28,11 @@ Description: "Pharmacy organization profile for Essential Medication Information
 * type ^slicing.discriminator.path = "$this"
 * type ^slicing.rules = #open
 * type contains pharmacy 0..1 MS
-* type[pharmacy] = $V3ActCode#OUTPHARM
+* type[pharmacy] = $V3RoleCode#OUTPHARM
 * type[pharmacy] ^short = "Outpatient pharmacy"
 
 // Address required
-* address 1..* MS
+* address 0..* MS
 * address ^short = "Pharmacy address"
 * address.line MS
 * address.city MS
@@ -30,18 +40,15 @@ Description: "Pharmacy organization profile for Essential Medication Information
 * address.postalCode MS
 
 // Phone required
-* telecom 1..* MS
+* telecom 0..* MS
 * telecom ^slicing.discriminator.type = #pattern
 * telecom ^slicing.discriminator.path = "system"
 * telecom ^slicing.rules = #open
-* telecom contains phone 1..* MS
+* telecom contains phone 0..* MS
 * telecom[phone].system = #phone (exactly)
 * telecom[phone].value 1..1 MS
 * telecom[phone] ^short = "Pharmacy phone number"
 
-// Active status
-* active MS
-* active ^short = "Whether pharmacy is active"
 
 // Mappings to VistA
 Mapping: VistAPharmacy
@@ -53,3 +60,19 @@ Target: "http://va.gov/fhir/emi/StructureDefinition/vista-pharmacy"
 * name -> "Pharmacy name from institution file or File 52 Field 2"
 * address -> "Institution address data"
 * telecom[phone] -> "Pharmacy phone from institution file"
+
+// Invariants
+Invariant: emi-pharm-1
+Severity: #warning
+Description: "meta.source SHOULD be populated to identify the originating system for pharmacy data"
+Expression: "meta.source.exists()"
+
+Invariant: emi-pharm-2
+Severity: #warning
+Description: "address SHOULD be populated to provide pharmacy location"
+Expression: "address.exists()"
+
+Invariant: emi-pharm-3
+Severity: #warning
+Description: "telecom (phone) SHOULD be populated to provide pharmacy contact information"
+Expression: "telecom.where(system = 'phone').exists()"

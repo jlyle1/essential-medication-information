@@ -13,29 +13,31 @@ This guide is compatible with the US Core FHIR profiles, but it does not inherit
 
 This IG supports querying for essential medication information, including:
 
-| Category | Data Element |
-|:---------|:--------------|
-| Patient | Name |
-| Patient | Date of birth |
-| Patient | Identifiers (ICN, EDIPI) |
-| Allergy | Substance |
-| Allergy | Reaction |
-| Medication | Drug name with form and strength|
-| Medication | Sig |
-| Medication | Status |
-| Medication | Source (Outpatient, Inpatient, Reported) |
-| Dispense | Last released date |
-| Dispense | Quantity |
-| Dispense | Remaining fills |
-| Dispense | Pharmacy |
-| Counseling | Counseling provided |
-| Counseling | Patient understanding demonstrated |
+| Category | Data Element | Scope |
+|:----------------|:----------------|:----------------|
+| Patient | Name | Patient |
+| Patient | Date of birth | Patient |
+| Patient | Identifiers (ICN, EDIPI) | Patient |
+| Allergy | Substance | Allergy |
+| Allergy | Reaction | Allergy |
+| Medication | Drug name with form and strength| All Meds |
+| Medication | Sig | All Meds but IV |
+| Medication | Status | All Meds |
+| Medication | Source (Outpatient, Inpatient, Reported) | All Meds |
+| Dispense | Last released date | Outpatient |
+| Dispense | Quantity | Outpatient |
+| Dispense | Remaining fills | Outpatient |
+| Dispense | Pharmacy | Outpatient |
+| Counseling | Counseling provided | Outpatient |
+| Counseling | Patient understanding demonstrated | Outpatient |
 
 ### Operation
 
-The guide defines the [$essential-medication-information-for-review](OperationDefinition-essential-medication-information-for-review.html) operation to retrieve a patient's complete essential medication information as a Bundle. This operation is defined as a FHIR Restful operation.
+The guide defines the [$essential-medication-information-for-review](OperationDefinition-essential-medication-information-for-review.html) operation to retrieve a patient's complete essential medication information as a Bundle. This operation is defined as a FHIR Restful operation on the Patient resource.
 
-It may be necessary to iterate or federate queries, e.g., in a network, or if multiple external partners are known. Reconciliation of versions is not addressed here.
+It may be necessary to iterate or federate queries, e.g., in a network, or if multiple external partners are known. For that case, a system-level Operation may be more flexible. That use case, and the reconciliation of versions it may require, are not addressed here. 
+
+Servers supporting federation may wish to advertise asynchronous operation in CapabilityStatement, and even in a Presumptive Error 412 Precondition Failed with a suggestion to try respond-async.
 
 ### Levels of constraint
 There are several tactics for indicating that a given data element is desired. 
@@ -47,6 +49,10 @@ There are several tactics for indicating that a given data element is desired.
 
 We avoid tactics 1 & 2 as potentially filtering clinically significant information. We adopt 3, 4, and 5 in a layered approach to maximize the visibility of our requirements.
 
+### Example data
+Test Patient 1: manually constructed
+Test Patient 2: derived from a VistA test patient
+Test Patient 3: constructed to exhibit a perfect PIQI score
 
 ### Background
 

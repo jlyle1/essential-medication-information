@@ -8,18 +8,18 @@ Description: "Inpatient unit dose medication profile for Essential Medication In
 * ^version = "1.0.0"
 
 // Source system
-* meta.source 1..1 MS
+* meta.source 0..1 MS
 * meta.source ^short = "Source system (sta3n for VA)"
 * meta.source ^definition = "URI identifying the source system. For VA, use format http://va.gov/fhir/sid/sta3n/{sta3n} (e.g., http://va.gov/fhir/sid/sta3n/520)."
 
 // Identifier - order number
-* identifier 1..* MS
+* identifier 0..* MS
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 
-* identifier contains orderNumber 1..1 MS
-* identifier[orderNumber].system = $VistAOrderNumber (exactly)
+* identifier contains orderNumber 0..1 MS
+* identifier[orderNumber].system = $VistAUnitDoseOrderNumber (exactly)
 * identifier[orderNumber].value 1..1 MS
 * identifier[orderNumber] ^short = "Inpatient order number"
 * identifier[orderNumber] ^definition = "The VistA unit dose order number from File 55.06."

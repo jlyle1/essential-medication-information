@@ -4,8 +4,10 @@ Usage: #example
 Title: "EMI Pharmacy Organization Example"
 Description: "Example of a VA pharmacy organization."
 
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
 * active = true
-* type[pharmacy] = $V3ActCode#OUTPHARM
+* type[pharmacy] = $V3RoleCode#OUTPHARM
 
 * name = "VA Medical Center Pharmacy - Building 1"
 

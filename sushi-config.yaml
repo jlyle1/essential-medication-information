@@ -21,8 +21,8 @@ publisher:
   email: pbm@va.gov
 
 # Dependencies
-# dependencies:
-#   hl7.fhir.us.core: 6.1.0
+dependencies:
+  hl7.terminology.r4: 6.0.2
 
 # Pages
 pages:
@@ -40,6 +40,7 @@ menu:
 # Parameters
 parameters:
   show-inherited-invariants: false
+  path-expansion-params: '../../exp-params.json'  #path is relative to [base]/fsh-generated/resources
 
 # Instance options
 instanceOptions:
@@ -59,7 +60,6 @@ groups:
     description: Profiles for allergies and adverse drug reactions
     resources:
       - StructureDefinition/emi-allergyintolerance
-      - StructureDefinition/emi-allergy-list
   MedicationProfiles:
     name: Medications
     description: Profiles for medication information from various sources
@@ -68,18 +68,22 @@ groups:
       - StructureDefinition/emi-inpatient-medicationrequest
       - StructureDefinition/emi-iv-medicationrequest
       - StructureDefinition/emi-external-medicationstatement
-      - StructureDefinition/emi-medication-list
   DispenseProfiles:
     name: Dispense and Pharmacy
     description: Profiles for dispense events and pharmacy information
     resources:
       - StructureDefinition/emi-medicationdispense
       - StructureDefinition/emi-pharmacy-organization
+  ProviderProfiles:
+    name: Provider
+    description: Profiles for healthcare providers
+    resources:
+      - StructureDefinition/emi-practitioner
   CounselingProfiles:
     name: Counseling
     description: Profiles for medication counseling documentation
     resources:
-      - StructureDefinition/emi-medication-counseling-observation
+      - StructureDefinition/emi-medication-counseling-procedure
   BundleProfiles:
     name: Bundle and Parameters
     description: Profiles for operation input/output
@@ -97,6 +101,5 @@ groups:
     resources:
       - CodeSystem/emi-medication-source
       - ValueSet/emi-medication-source-vs
-      - ValueSet/emi-list-empty-reason-vs
-      - ValueSet/emi-counseling-provided-vs
-      - ValueSet/emi-counseling-understood-vs
+      - ValueSet/emi-medication-counseling-status-vs
+      - ValueSet/emi-medication-counseling-outcome-vs

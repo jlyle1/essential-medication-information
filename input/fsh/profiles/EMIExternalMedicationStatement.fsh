@@ -7,21 +7,18 @@ Description: "External medication profile for Essential Medication Information, 
 * ^status = #active
 * ^version = "1.0.0"
 
+// Invariants
+* obeys emi-ext-med-1
+* obeys emi-ext-med-2
+
 // Source system
-* meta.source 1..1 MS
+* meta.source 0..1 MS
 * meta.source ^short = "Source system (sta3n for VA)"
 * meta.source ^definition = "URI identifying the source system. For VA, use format http://va.gov/fhir/sid/sta3n/{sta3n} (e.g., http://va.gov/fhir/sid/sta3n/520)."
 
-// Status required
-* status 1..1 MS
-* status ^short = "active | completed | entered-in-error | intended | stopped | on-hold | unknown | not-taken"
+// Status required by core
 * status.extension contains $AlternateCodes named alternateCodes 0..1 MS
 * status.extension[alternateCodes] ^short = "VistA pharmacy order status (File 55.05, Field 5)"
-
-// Category - community (external)
-* category MS
-* category = $MedicationStatementCategory#community
-* category ^short = "Community/external medication"
 
 // Medication
 * medication[x] only CodeableConcept
@@ -34,32 +31,9 @@ Description: "External medication profile for Essential Medication Information, 
 * subject only Reference(EMIPatient)
 * subject 1..1 MS
 
-// Effective period
-* effective[x] MS
-* effective[x] ^short = "When medication is/was taken"
-
-// Date asserted
-* dateAsserted MS
-* dateAsserted ^short = "When recorded in system"
-
-// Information source
-* informationSource MS
-* informationSource ^short = "Person who provided the information (often patient)"
-
 // Reason for use
 * reasonCode MS
 * reasonCode ^short = "Indication/reason for medication"
-
-// Dosage
-* dosage MS
-* dosage.text MS
-* dosage.text ^short = "Dosage instructions as reported"
-* dosage.route MS
-* dosage.route ^short = "Route of administration"
-* dosage.route from http://hl7.org/fhir/ValueSet/route-codes (preferred)
-* dosage.timing MS
-* dosage.timing ^short = "Schedule/frequency"
-* dosage.timing.code MS
 
 // Mappings to VistA File 55.05
 Mapping: VistAFile55-05
@@ -69,9 +43,16 @@ Source: EMIExternalMedicationStatement
 Target: "http://va.gov/fhir/emi/StructureDefinition/vista-file-55-05"
 
 * medicationCodeableConcept -> "File 55.05, Field .01 (ORDERABLE ITEM) -> mapped to RxNorm"
-* dosage.text -> "File 55.05, Field 2 (DOSAGE)"
-* dosage.route -> "File 55.05, Field 3 (ROUTE)"
-* dosage.timing.code -> "File 55.05, Field 4 (SCHEDULE)"
 * status -> "File 55.05, Field 5 (STATUS)"
-* dateAsserted -> "File 55.05, Field 6 (START DATE) or documentation date"
-* informationSource -> "File 55.05, Field 8 (DOCUMENTED BY)"
+* reasonCode -> "File 55.05, Field 15 (INDICATION FOR USE)"
+
+// Invariants
+Invariant: emi-ext-med-1
+Severity: #warning
+Description: "meta.source SHOULD be populated to identify the originating system for external medication data"
+Expression: "meta.source.exists()"
+
+Invariant: emi-ext-med-2
+Severity: #warning
+Description: "reasonCode SHOULD be populated to capture the indication for the external medication"
+Expression: "reasonCode.exists()"

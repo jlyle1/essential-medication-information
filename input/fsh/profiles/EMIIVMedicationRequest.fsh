@@ -19,7 +19,7 @@ Description: "Inpatient IV medication profile for Essential Medication Informati
 * identifier ^slicing.rules = #open
 
 * identifier contains orderNumber 1..1 MS
-* identifier[orderNumber].system = $VistAOrderNumber (exactly)
+* identifier[orderNumber].system = $VistAIVOrderNumber (exactly)
 * identifier[orderNumber].value 1..1 MS
 * identifier[orderNumber] ^short = "IV order number"
 * identifier[orderNumber] ^definition = "The VistA IV order number from File 55.01."
