@@ -5,6 +5,7 @@ Title: "EMI Request Parameters"
 Description: "Parameters profile for the $essential-medication-information-for-review operation input, including patient identifier and status horizon duration."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Parameters slicing

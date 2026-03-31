@@ -6,7 +6,7 @@ Description: "Example of an inpatient unit dose medication order from VistA File
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
-* identifier[orderNumber].system = "http://va.gov/fhir/sid/648/55.06-.01"
+* identifier[orderNumber].system = $VistAUnitDoseOrderNumber
 * identifier[orderNumber].value = "789012"
 
 * status = #active
@@ -33,7 +33,7 @@ Description: "Example of an inpatient IV medication order from VistA File 55.01.
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
-* identifier[orderNumber].system = "http://va.gov/fhir/sid/648/55.01-.01"
+* identifier[orderNumber].system = $VistAIVOrderNumber
 * identifier[orderNumber].value = "456789"
 
 * status = #active

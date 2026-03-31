@@ -5,6 +5,7 @@ Title: "EMI External MedicationStatement"
 Description: "External medication profile for Essential Medication Information, representing VistA File 55.05 non-VA medications including OTC, herbal, and outside prescriptions."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Invariants

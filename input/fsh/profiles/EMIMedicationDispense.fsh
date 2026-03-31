@@ -5,6 +5,7 @@ Title: "EMI MedicationDispense"
 Description: "Medication dispense profile for Essential Medication Information, capturing dispense events including last released date and pharmacy information."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Source system

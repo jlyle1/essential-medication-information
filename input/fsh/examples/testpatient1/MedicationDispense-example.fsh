@@ -16,8 +16,6 @@ Description: "Example of a medication dispense showing last released date."
 
 * quantity.value = 90
 * quantity.unit = "tablet"
-* quantity.system = $UCUM
-* quantity.code = #{tbl}
 
 * daysSupply.value = 90
 * daysSupply.unit = "days"

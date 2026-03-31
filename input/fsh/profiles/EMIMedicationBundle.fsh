@@ -5,6 +5,7 @@ Title: "EMI Medication Bundle"
 Description: "Bundle profile for Essential Medication Information, serving as the response to the $essential-medication-information-for-review operation. Contains patient, allergies, medications, dispenses, counseling observations, and supporting resources."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Source system
@@ -35,7 +36,8 @@ Description: "Bundle profile for Essential Medication Information, serving as th
     medication 0..* MS and
     dispense 0..* MS and
     counseling 0..* MS and
-    pharmacy 0..* MS
+    pharmacy 0..* MS and
+    provider 0..* MS
 
 // Patient entry
 * entry[patient].resource only EMIPatient
@@ -60,3 +62,7 @@ Description: "Bundle profile for Essential Medication Information, serving as th
 // Pharmacy organization entries
 * entry[pharmacy].resource only EMIPharmacyOrganization
 * entry[pharmacy] ^short = "Dispensing pharmacy"
+
+// Provider entries
+* entry[provider].resource only EMIPractitioner
+* entry[provider] ^short = "Prescribing or ordering provider"

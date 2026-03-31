@@ -5,6 +5,7 @@ Title: "EMI Medication Counseling Procedure"
 Description: "Procedure profile for Essential Medication Information, capturing whether medication counseling was performed for the patient."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Invariants

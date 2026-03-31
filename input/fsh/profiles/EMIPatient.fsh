@@ -5,6 +5,7 @@ Title: "EMI Patient"
 Description: "Patient profile for Essential Medication Information, supporting patient identification requirements."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Source system

@@ -13,10 +13,5 @@ This project involves HL7 FHIR implementation guides and healthcare data standar
 
 ---
 
-## Project Scope: Database Query Use Case
-
-**This IG supports querying a database for essential medication information.** 
-### Data Elements In Scope
-
 ## VHA Directive 1164: Essential Medication Information (July 13, 2023)
-
+C:\Users\JayLyle\J P Systems, Inc\TO 20 - Project Documents - Documents\Project Documents\FHIR Implementation Support\I - Medication History\Policies

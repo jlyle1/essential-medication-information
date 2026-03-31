@@ -5,6 +5,7 @@ Title: "EMI AllergyIntolerance"
 Description: "Allergy/adverse reaction profile for Essential Medication Information, capturing substance and reaction information from VistA."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Invariants

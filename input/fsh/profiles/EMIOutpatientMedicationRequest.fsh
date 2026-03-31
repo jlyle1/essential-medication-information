@@ -5,6 +5,7 @@ Title: "EMI Outpatient MedicationRequest"
 Description: "Outpatient prescription profile for Essential Medication Information, representing VistA File 52 prescriptions."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Invariants

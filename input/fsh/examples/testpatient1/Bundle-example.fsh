@@ -47,3 +47,7 @@ Description: "Example of a complete medication bundle returned from the $essenti
 // Pharmacy
 * entry[pharmacy][+].fullUrl = "http://va.gov/fhir/emi/Organization/pharmacy-example"
 * entry[pharmacy][=].resource = pharmacy-example
+
+// Provider
+* entry[provider][+].fullUrl = "http://va.gov/fhir/emi/Practitioner/practitioner-janedoe"
+* entry[provider][=].resource = practitioner-janedoe

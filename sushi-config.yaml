@@ -30,12 +30,15 @@ pages:
     title: Home
   artifacts.html:
     title: Artifacts
+  downloads.md:
+    title: Downloads
 
 # Menu
 menu:
   Home: index.html
   Artifacts: artifacts.html
   Operation: OperationDefinition-essential-medication-information-for-review.html
+  Downloads: downloads.html
 
 # Parameters
 parameters:
@@ -103,3 +106,13 @@ groups:
       - ValueSet/emi-medication-source-vs
       - ValueSet/emi-medication-counseling-status-vs
       - ValueSet/emi-medication-counseling-outcome-vs
+  Identifiers:
+    name: Identifier Systems
+    description: NamingSystem resources defining identifier systems used in this IG
+    resources:
+      - NamingSystem/icn-naming-system
+      - NamingSystem/edipi-naming-system
+      - NamingSystem/vista-patient-ien-naming-system
+      - NamingSystem/vista-rx-number-naming-system
+      - NamingSystem/vista-unit-dose-order-naming-system
+      - NamingSystem/vista-iv-order-naming-system

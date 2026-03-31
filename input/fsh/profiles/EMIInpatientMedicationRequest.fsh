@@ -5,6 +5,7 @@ Title: "EMI Inpatient MedicationRequest"
 Description: "Inpatient unit dose medication profile for Essential Medication Information, representing VistA File 55.06 orders."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Source system

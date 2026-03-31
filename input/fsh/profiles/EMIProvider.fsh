@@ -5,6 +5,7 @@ Title: "EMI Practitioner"
 Description: "Practitioner profile for Essential Medication Information, representing prescribers and other healthcare providers."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Invariants

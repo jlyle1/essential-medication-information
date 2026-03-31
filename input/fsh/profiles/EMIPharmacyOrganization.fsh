@@ -5,6 +5,7 @@ Title: "EMI Pharmacy Organization"
 Description: "Pharmacy organization profile for Essential Medication Information, capturing pharmacy name, address, and phone."
 
 * ^status = #active
+* ^experimental = true
 * ^version = "1.0.0"
 
 // Invariants
