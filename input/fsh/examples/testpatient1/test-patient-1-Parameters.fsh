@@ -1,4 +1,4 @@
-Instance: request-parameters-example
+Instance: test-patient-1-request-parameters
 InstanceOf: EMIRequestParameters
 Usage: #example
 Title: "EMI Request Parameters Example"
@@ -20,11 +20,11 @@ Description: "Example of parameters for the $essential-medication-information-fo
 * parameter[includeCounseling].name = "includeCounseling"
 * parameter[includeCounseling].valueBoolean = true
 
-Instance: request-parameters-minimal-example
+Instance: test-patient-1-request-parameters-minimal
 InstanceOf: EMIRequestParameters
 Usage: #example
 Title: "EMI Request Parameters - Minimal"
 Description: "Example of minimal parameters for the $essential-medication-information-for-review operation."
 
 * parameter[patient].name = "patient"
-* parameter[patient].valueReference = Reference(testpatient1-patient)
+* parameter[patient].valueReference = Reference(test-patient-1-patient)

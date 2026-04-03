@@ -1,4 +1,4 @@
-Instance: medicationrequest-unitdose-example
+Instance: test-patient-1-unitdose
 InstanceOf: EMIInpatientMedicationRequest
 Usage: #example
 Title: "EMI Inpatient MedicationRequest Example"
@@ -16,7 +16,7 @@ Description: "Example of an inpatient unit dose medication order from VistA File
 * medicationCodeableConcept = $RxNorm#197361 "amlodipine 5 MG Oral Tablet"
 * medicationCodeableConcept.text = "AMLODIPINE 5MG TAB"
 
-* subject = Reference(testpatient1-patient)
+* subject = Reference(test-patient-1-patient)
 * authoredOn = "2024-03-10"
 
 * requester.display = "Dr. Robert Johnson"
@@ -25,7 +25,7 @@ Description: "Example of an inpatient unit dose medication order from VistA File
 * dosageInstruction[=].route = $SCT#26643006 "Oral route"
 * dosageInstruction[=].timing.code.text = "QD"
 
-Instance: medicationrequest-iv-example
+Instance: test-patient-1-iv
 InstanceOf: EMIIVMedicationRequest
 Usage: #example
 Title: "EMI IV MedicationRequest Example"
@@ -43,7 +43,7 @@ Description: "Example of an inpatient IV medication order from VistA File 55.01.
 * medicationCodeableConcept = $RxNorm#309778 "dextrose 5 % Injectable Solution"
 * medicationCodeableConcept.text = "DEXTROSE 5% 1000ML (D5W)"
 
-* subject = Reference(testpatient1-patient)
+* subject = Reference(test-patient-1-patient)
 * authoredOn = "2024-03-10"
 
 * requester.display = "Dr. Robert Johnson"

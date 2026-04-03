@@ -1,4 +1,4 @@
-Instance: practitioner-janedoe
+Instance: test-patient-1-practitioner
 InstanceOf: EMIPractitioner
 Usage: #example
 Title: "Example Practitioner - Dr. Jane Doe"

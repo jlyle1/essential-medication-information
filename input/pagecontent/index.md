@@ -13,23 +13,29 @@ This guide is compatible with the US Core FHIR profiles, but it does not inherit
 
 This IG supports querying for essential medication information, including:
 
-| Category | Data Element | Scope |
-|:----------------|:----------------|:----------------|
-| Patient | Name | Patient |
-| Patient | Date of birth | Patient |
-| Patient | Identifiers (ICN, EDIPI) | Patient |
-| Allergy | Substance | Allergy |
-| Allergy | Reaction | Allergy |
-| Medication | Drug name with form and strength| All Meds |
-| Medication | Sig | All Meds but IV |
-| Medication | Status | All Meds |
-| Medication | Source (Outpatient, Inpatient, Reported) | All Meds |
-| Dispense | Last released date | Outpatient |
-| Dispense | Quantity | Outpatient |
-| Dispense | Remaining fills | Outpatient |
-| Dispense | Pharmacy | Outpatient |
-| Counseling | Counseling provided | Outpatient |
-| Counseling | Patient understanding demonstrated | Outpatient |
+| Category | Data Element | Scope | Rationale |
+|:----------------|:----------------|:----------------|:----------------|
+| Patient | Name | Patient | Policy |
+| Patient | Date of birth | Patient | Policy |
+| Patient | Identifiers (ICN, EDIPI) | Patient | Policy |
+| Allergy | Substance | Allergy | Policy |
+| Allergy | Reaction | Allergy | Policy |
+| Medication | Drug name with form and strength| All Meds | Policy |
+| Medication | Indication | All Meds | Policy |
+| Medication | Provider name and credential | All Meds | Policy |
+| Medication | Status | All Meds | Policy |
+| Medication | Sig | All Meds but IV | Policy |
+| Medication | Prescrition # | Outpatient | Policy |
+| Medication | Expected duration | Outpatient | Policy |
+| Medication | Expiration date | Outpatient | Calculation |
+| Medication | Cancel date | Outpatient | Calculation |
+| Medication | End date | Reported | Calculation |
+| Dispense | Quantity | Outpatient | Policy |
+| Dispense | Last released date | Outpatient | Policy |
+| Dispense | Remaining fills | Outpatient | Policy |
+| Dispense | Pharmacy | Outpatient | Policy |
+| Counseling | Counseling provided | Outpatient | Policy |
+| Counseling | Patient understanding demonstrated | Outpatient | Policy |
 
 ### Operation
 

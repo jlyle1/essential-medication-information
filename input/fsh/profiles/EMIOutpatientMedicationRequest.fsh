@@ -101,14 +101,14 @@ Description: "Outpatient prescription profile for Essential Medication Informati
 
 // Supporting information - medication counseling
 * supportingInformation 0..* MS
-* supportingInformation ^slicing.discriminator.type = #profile
+* supportingInformation ^slicing.discriminator.type = #type
 * supportingInformation ^slicing.discriminator.path = "resolve()"
 * supportingInformation ^slicing.rules = #open
 
 * supportingInformation contains counseling 0..* MS
-* supportingInformation[counseling] only Reference(EMIMedicationCounselingProcedure)
+* supportingInformation[counseling] only Reference(Procedure)
 * supportingInformation[counseling] ^short = "Medication counseling procedure"
-* supportingInformation[counseling] ^definition = "Reference to medication counseling procedure indicating whether counseling was performed."
+* supportingInformation[counseling] ^definition = "Reference to medication counseling procedure (EMIMedicationCounselingProcedure) indicating whether counseling was performed."
 
 // Mappings to VistA File 52
 Mapping: VistAFile52
@@ -171,8 +171,8 @@ Expression: "dispenseRequest.numberOfRepeatsAllowed.exists()"
 
 Invariant: emi-out-med-9
 Severity: #warning
-Description: "dispenseRequest.validityPeriod.end SHOULD be populated to indicate prescription expiration date"
-Expression: "dispenseRequest.validityPeriod.end.exists()"
+Description: "dispenseRequest.validityPeriod.end or cancelDate extension SHOULD be populated for cancelled, completed, or stopped prescriptions"
+Expression: "status in ('cancelled' | 'completed' | 'stopped') implies (dispenseRequest.validityPeriod.end.exists() or extension('http://va.gov/fhir/emi/StructureDefinition/emi-cancel-date').exists())"
 
 Invariant: emi-out-med-10
 Severity: #warning

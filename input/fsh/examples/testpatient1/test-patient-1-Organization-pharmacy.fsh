@@ -1,4 +1,4 @@
-Instance: pharmacy-example
+Instance: test-patient-1-pharmacy
 InstanceOf: EMIPharmacyOrganization
 Usage: #example
 Title: "EMI Pharmacy Organization Example"

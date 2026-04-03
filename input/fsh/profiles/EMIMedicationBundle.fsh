@@ -47,8 +47,8 @@ Description: "Bundle profile for Essential Medication Information, serving as th
 * entry[allergy].resource only EMIAllergyIntolerance
 * entry[allergy] ^short = "Allergy or adverse reaction"
 
-// Medication entries (outpatient, inpatient, IV, or external)
-* entry[medication].resource only EMIOutpatientMedicationRequest or EMIInpatientMedicationRequest or EMIIVMedicationRequest or EMIExternalMedicationStatement
+// Medication entries (outpatient, inpatient, IV, or reported)
+* entry[medication].resource only EMIOutpatientMedicationRequest or EMIInpatientMedicationRequest or EMIIVMedicationRequest or EMIReportedMedicationRequest
 * entry[medication] ^short = "Medication from any source"
 
 // Dispense entries

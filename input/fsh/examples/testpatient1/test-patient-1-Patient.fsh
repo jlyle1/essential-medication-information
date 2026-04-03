@@ -1,4 +1,4 @@
-Instance: testpatient1-patient
+Instance: test-patient-1-patient
 InstanceOf: EMIPatient
 Usage: #example
 Title: "EMI Patient Example"

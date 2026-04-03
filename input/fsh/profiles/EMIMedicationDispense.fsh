@@ -29,8 +29,8 @@ Description: "Medication dispense profile for Essential Medication Information, 
 
 // Authorizing prescription
 * authorizingPrescription MS
-* authorizingPrescription only Reference(EMIOutpatientMedicationRequest or EMIInpatientMedicationRequest or EMIIVMedicationRequest)
-* authorizingPrescription ^short = "Authorizing prescription"
+* authorizingPrescription only Reference(MedicationRequest)
+* authorizingPrescription ^short = "Authorizing prescription (EMIOutpatientMedicationRequest, EMIInpatientMedicationRequest, or EMIIVMedicationRequest)"
 
 // Quantity
 * quantity MS
