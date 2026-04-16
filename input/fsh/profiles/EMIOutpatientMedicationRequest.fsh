@@ -8,17 +8,11 @@ Description: "Outpatient prescription profile for Essential Medication Informati
 * ^experimental = true
 * ^version = "1.0.0"
 
-// Invariants
-* obeys emi-out-med-1
-* obeys emi-out-med-2
-* obeys emi-out-med-3
-* obeys emi-out-med-4
-* obeys emi-out-med-5
-* obeys emi-out-med-6
-* obeys emi-out-med-7
-* obeys emi-out-med-8
-* obeys emi-out-med-9
-* obeys emi-out-med-10
+// Invariants - see Rulesets.fsh
+* insert AllMedsInvariants
+* insert SigInvariants
+* insert OrderInvariants
+* insert OutpatientInvariants
 
 // Source system
 * meta.source 0..1 MS
@@ -98,6 +92,9 @@ Description: "Outpatient prescription profile for Essential Medication Informati
 * dispenseRequest.numberOfRepeatsAllowed ^short = "Number of refills"
 * dispenseRequest.validityPeriod.end 0..1 MS
 * dispenseRequest.validityPeriod.end ^short = "Prescription expiration date"
+* dispenseRequest.performer 0..1 MS
+* dispenseRequest.performer only Reference(EMIPharmacyOrganization)
+* dispenseRequest.performer ^short = "Dispensing pharmacy"
 
 // Supporting information - medication counseling
 * supportingInformation 0..* MS
@@ -128,53 +125,4 @@ Target: "http://va.gov/fhir/emi/StructureDefinition/vista-file-52"
 * requester -> "File 52, Field 4 (PROVIDER)"
 * reasonCode -> "File 52, Field 9.5 (INDICATION) if available"
 
-// Invariants
-Invariant: emi-out-med-1
-Severity: #warning
-Description: "meta.source SHOULD be populated to identify the originating system for outpatient medication data"
-Expression: "meta.source.exists()"
-
-Invariant: emi-out-med-2
-Severity: #warning
-Description: "identifier (RxNumber) SHOULD be populated to uniquely identify the prescription"
-Expression: "identifier.where(system = 'http://va.gov/fhir/sid/648/52-.01').value.exists()"
-
-Invariant: emi-out-med-3
-Severity: #warning
-Description: "requester SHOULD be populated to identify the prescriber"
-Expression: "requester.exists()"
-
-Invariant: emi-out-med-4
-Severity: #warning
-Description: "reasonCode SHOULD be populated to capture the indication for the medication"
-Expression: "reasonCode.exists()"
-
-Invariant: emi-out-med-5
-Severity: #warning
-Description: "dosageInstruction.text (SIG) SHOULD be populated to provide patient instructions"
-Expression: "dosageInstruction.text.exists()"
-
-Invariant: emi-out-med-6
-Severity: #warning
-Description: "dispenseRequest.quantity SHOULD be populated to indicate the quantity dispensed"
-Expression: "dispenseRequest.quantity.exists()"
-
-Invariant: emi-out-med-7
-Severity: #warning
-Description: "dispenseRequest.expectedSupplyDuration SHOULD be populated to indicate days supply"
-Expression: "dispenseRequest.expectedSupplyDuration.exists()"
-
-Invariant: emi-out-med-8
-Severity: #warning
-Description: "dispenseRequest.numberOfRepeatsAllowed SHOULD be populated to indicate number of refills"
-Expression: "dispenseRequest.numberOfRepeatsAllowed.exists()"
-
-Invariant: emi-out-med-9
-Severity: #warning
-Description: "dispenseRequest.validityPeriod.end or cancelDate extension SHOULD be populated for cancelled, completed, or stopped prescriptions"
-Expression: "status in ('cancelled' | 'completed' | 'stopped') implies (dispenseRequest.validityPeriod.end.exists() or extension('http://va.gov/fhir/emi/StructureDefinition/emi-cancel-date').exists())"
-
-Invariant: emi-out-med-10
-Severity: #warning
-Description: "supportingInformation (counseling) SHOULD be populated to indicate medication counseling status"
-Expression: "supportingInformation.exists()"
+// Invariants defined in Rulesets.fsh

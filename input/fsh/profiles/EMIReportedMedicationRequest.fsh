@@ -8,10 +8,10 @@ Description: "Reported/external medication profile for Essential Medication Info
 * ^experimental = true
 * ^version = "1.0.0"
 
-// Invariants
-* obeys emi-rep-med-1
-* obeys emi-rep-med-2
-* obeys emi-rep-med-3
+// Invariants - see Rulesets.fsh
+* insert AllMedsInvariants
+* insert SigInvariants
+* insert ReportedInvariants
 
 // Source system
 * meta.source 0..1 MS
@@ -67,6 +67,10 @@ Description: "Reported/external medication profile for Essential Medication Info
 * dosageInstruction.text ^short = "Free text dosage instructions"
 * dosageInstruction.route MS
 
+// End date for non-active medications
+* dispenseRequest.validityPeriod.end 0..1 MS
+* dispenseRequest.validityPeriod.end ^short = "End date for reported medication"
+
 // Mappings to VistA File 55.05
 Mapping: VistAFile55-05-Reported
 Id: vista-file-55-05
@@ -78,18 +82,4 @@ Target: "http://va.gov/fhir/emi/StructureDefinition/vista-file-55-05"
 * status -> "File 55.05, Field 5 (STATUS)"
 * reasonCode -> "File 55.05, Field 15 (INDICATION FOR USE)"
 
-// Invariants
-Invariant: emi-rep-med-1
-Severity: #warning
-Description: "meta.source SHOULD be populated to identify the originating system for reported medication data"
-Expression: "meta.source.exists()"
-
-Invariant: emi-rep-med-2
-Severity: #warning
-Description: "reasonCode SHOULD be populated to capture the indication for the reported medication"
-Expression: "reasonCode.exists()"
-
-Invariant: emi-rep-med-3
-Severity: #warning
-Description: "dosageInstruction SHOULD be populated to capture how the patient takes the medication"
-Expression: "dosageInstruction.exists()"
+// Invariants defined in Rulesets.fsh

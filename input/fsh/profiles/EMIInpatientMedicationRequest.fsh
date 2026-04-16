@@ -8,6 +8,11 @@ Description: "Inpatient unit dose medication profile for Essential Medication In
 * ^experimental = true
 * ^version = "1.0.0"
 
+// Invariants - see Rulesets.fsh
+* insert AllMedsInvariants
+* insert SigInvariants
+* insert OrderInvariants
+
 // Source system
 * meta.source 0..1 MS
 * meta.source ^short = "Source system (sta3n for VA)"
@@ -54,6 +59,10 @@ Description: "Inpatient unit dose medication profile for Essential Medication In
 // Requester
 * requester MS
 * requester ^short = "Ordering provider"
+
+// Reason for use (indication)
+* reasonCode MS
+* reasonCode ^short = "Indication/reason for medication"
 
 // Dosage instructions
 * dosageInstruction 1..* MS

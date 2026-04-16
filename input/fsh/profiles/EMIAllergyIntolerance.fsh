@@ -10,6 +10,7 @@ Description: "Allergy/adverse reaction profile for Essential Medication Informat
 
 // Invariants
 * obeys emi-allergy-1
+* obeys emi-allergy-2
 
 // Source system
 * meta.source 0..1 MS
@@ -56,3 +57,8 @@ Invariant: emi-allergy-1
 Severity: #warning
 Description: "meta.source SHOULD be populated to identify the originating system for allergy data"
 Expression: "meta.source.exists()"
+
+Invariant: emi-allergy-2
+Severity: #warning
+Description: "reaction.manifestation SHOULD be populated to capture clinical symptoms/signs of the reaction"
+Expression: "reaction.manifestation.exists()"

@@ -20,12 +20,12 @@ This IG supports querying for essential medication information, including:
 | Patient | Identifiers (ICN, EDIPI) | Patient | Policy |
 | Allergy | Substance | Allergy | Policy |
 | Allergy | Reaction | Allergy | Policy |
-| Medication | Drug name with form and strength| All Meds | Policy |
+| Medication | Drug name with form and strength | All Meds | Policy |
 | Medication | Indication | All Meds | Policy |
-| Medication | Provider name and credential | All Meds | Policy |
+| Medication | Provider name and credential | All Meds but Reported | Policy |
 | Medication | Status | All Meds | Policy |
 | Medication | Sig | All Meds but IV | Policy |
-| Medication | Prescrition # | Outpatient | Policy |
+| Medication | Prescription # | Outpatient | Policy |
 | Medication | Expected duration | Outpatient | Policy |
 | Medication | Expiration date | Outpatient | Calculation |
 | Medication | Cancel date | Outpatient | Calculation |
