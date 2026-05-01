@@ -67,10 +67,10 @@ groups:
     name: Medications
     description: Profiles for medication information from various sources
     resources:
-      - StructureDefinition/emi-outpatient-medicationrequest
-      - StructureDefinition/emi-inpatient-medicationrequest
-      - StructureDefinition/emi-iv-medicationrequest
-      - StructureDefinition/emi-reported-medicationrequest
+      - StructureDefinition/emi-medicationrequest-prescription
+      - StructureDefinition/emi-medicationrequest-pending
+      - StructureDefinition/emi-medicationrequest-infacility
+      - StructureDefinition/emi-medicationrequest-reported
   DispenseProfiles:
     name: Dispense and Pharmacy
     description: Profiles for dispense events and pharmacy information
@@ -82,11 +82,6 @@ groups:
     description: Profiles for healthcare providers
     resources:
       - StructureDefinition/emi-practitioner
-  CounselingProfiles:
-    name: Counseling
-    description: Profiles for medication counseling documentation
-    resources:
-      - StructureDefinition/emi-medication-counseling-procedure
   BundleProfiles:
     name: Bundle and Parameters
     description: Profiles for operation input/output
@@ -104,8 +99,6 @@ groups:
     resources:
       - CodeSystem/emi-medication-source
       - ValueSet/emi-medication-source-vs
-      - ValueSet/emi-medication-counseling-status-vs
-      - ValueSet/emi-medication-counseling-outcome-vs
   Identifiers:
     name: Identifier Systems
     description: NamingSystem resources defining identifier systems used in this IG

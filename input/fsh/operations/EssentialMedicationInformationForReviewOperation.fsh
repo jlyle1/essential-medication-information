@@ -2,7 +2,7 @@ Instance: essential-medication-information-for-review
 InstanceOf: OperationDefinition
 Usage: #definition
 Title: "Essential Medication Information for Review Operation"
-Description: "Retrieve a patient's essential medication information including allergies, medications from all sources, dispense history, and counseling status."
+Description: "Retrieve a patient's essential medication information including allergies, medications from all sources, and dispense history."
 
 * status = #active
 * kind = #operation
@@ -28,13 +28,6 @@ Description: "Retrieve a patient's essential medication information including al
 * parameter[=].documentation = "Whether to include MedicationDispense resources with last released date. Default is true."
 * parameter[=].type = #boolean
 
-* parameter[+].name = #includeCounseling
-* parameter[=].use = #in
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].documentation = "Whether to include medication counseling observation resources. Default is true."
-* parameter[=].type = #boolean
-
 * parameter[+].name = #includeSources
 * parameter[=].use = #in
 * parameter[=].min = 0
@@ -49,6 +42,6 @@ Description: "Retrieve a patient's essential medication information including al
 * parameter[=].use = #out
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].documentation = "A Bundle containing the patient, allergy list, medication list, and all referenced resources (individual allergies, medications, dispenses, counseling observations, pharmacies, and practitioners)."
+* parameter[=].documentation = "A Bundle containing the patient, allergy list, medication list, and all referenced resources (individual allergies, medications, dispenses, pharmacies, and practitioners)."
 * parameter[=].type = #Bundle
 * parameter[=].targetProfile = Canonical(EMIMedicationBundle)

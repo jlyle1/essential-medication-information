@@ -1,7 +1,7 @@
-Instance: test-patient-1-dispense
+Instance: test1-dispense
 InstanceOf: EMIMedicationDispense
 Usage: #example
-Title: "EMI MedicationDispense Example"
+Title: "Test 1 - MedicationDispense Example"
 Description: "Example of a medication dispense showing last released date."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -11,8 +11,8 @@ Description: "Example of a medication dispense showing last released date."
 * medicationCodeableConcept = $RxNorm#314076 "lisinopril 10 MG Oral Tablet"
 * medicationCodeableConcept.text = "LISINOPRIL 10MG TAB"
 
-* subject = Reference(test-patient-1-patient)
-* authorizingPrescription = Reference(test-patient-1-outpatient-lisinopril)
+* subject = Reference(test1-patient)
+* authorizingPrescription = Reference(test1-prescription-lisinopril)
 
 * quantity.value = 90
 * quantity.unit = "tablet"
@@ -25,4 +25,4 @@ Description: "Example of a medication dispense showing last released date."
 * whenPrepared = "2024-04-01T10:30:00-05:00"
 * whenHandedOver = "2024-04-02T14:15:00-05:00"
 
-* performer[+].actor = Reference(test-patient-1-pharmacy)
+* performer[+].actor = Reference(test1-pharmacy)

@@ -17,8 +17,7 @@ Description: "Parameters profile for the $essential-medication-information-for-r
 * parameter contains
     patient 1..1 MS and
     statusHorizonDuration 0..1 MS and
-    includeDispenses 0..1 MS and
-    includeCounseling 0..1 MS
+    includeDispenses 0..1 MS
 
 // Patient identifier parameter
 * parameter[patient].name = "patient" (exactly)
@@ -37,9 +36,3 @@ Description: "Parameters profile for the $essential-medication-information-for-r
 * parameter[includeDispenses].value[x] only boolean
 * parameter[includeDispenses] ^short = "Include dispense information"
 * parameter[includeDispenses] ^definition = "Whether to include MedicationDispense resources with last released date."
-
-// Include counseling flag
-* parameter[includeCounseling].name = "includeCounseling" (exactly)
-* parameter[includeCounseling].value[x] only boolean
-* parameter[includeCounseling] ^short = "Include counseling observations"
-* parameter[includeCounseling] ^definition = "Whether to include medication counseling observation resources."

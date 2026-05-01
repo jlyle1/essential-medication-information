@@ -2,7 +2,7 @@ Profile: EMIMedicationBundle
 Parent: Bundle
 Id: emi-medication-bundle
 Title: "EMI Medication Bundle"
-Description: "Bundle profile for Essential Medication Information, serving as the response to the $essential-medication-information-for-review operation. Contains patient, allergies, medications, dispenses, counseling observations, and supporting resources."
+Description: "Bundle profile for Essential Medication Information, serving as the response to the $essential-medication-information-for-review operation. Contains patient, allergies, medications, dispenses, and supporting resources."
 
 * ^status = #active
 * ^experimental = true
@@ -35,7 +35,6 @@ Description: "Bundle profile for Essential Medication Information, serving as th
     allergy 0..* MS and
     medication 0..* MS and
     dispense 0..* MS and
-    counseling 0..* MS and
     pharmacy 0..* MS and
     provider 0..* MS
 
@@ -47,17 +46,13 @@ Description: "Bundle profile for Essential Medication Information, serving as th
 * entry[allergy].resource only EMIAllergyIntolerance
 * entry[allergy] ^short = "Allergy or adverse reaction"
 
-// Medication entries (outpatient, inpatient, IV, or reported)
-* entry[medication].resource only EMIOutpatientMedicationRequest or EMIInpatientMedicationRequest or EMIIVMedicationRequest or EMIReportedMedicationRequest
+// Medication entries (prescription, pending, in-facility, or reported)
+* entry[medication].resource only EMIMedicationRequestPrescription or EMIMedicationRequestPending or EMIMedicationRequestInFacility or EMIMedicationRequestReported
 * entry[medication] ^short = "Medication from any source"
 
 // Dispense entries
 * entry[dispense].resource only EMIMedicationDispense
 * entry[dispense] ^short = "Medication dispense record"
-
-// Counseling observation entries
-* entry[counseling].resource only EMIMedicationCounselingProcedure
-* entry[counseling] ^short = "Patient medication counseling"
 
 // Pharmacy organization entries
 * entry[pharmacy].resource only EMIPharmacyOrganization

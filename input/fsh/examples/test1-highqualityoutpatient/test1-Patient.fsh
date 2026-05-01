@@ -1,8 +1,8 @@
-Instance: test-patient-1-patient
+Instance: test1-patient
 InstanceOf: EMIPatient
 Usage: #example
-Title: "EMI Patient Example"
-Description: "Example of a patient with ICN identifier."
+Title: "Test 1 - High Quality Outpatient"
+Description: "Example outpatient with high quality medication data including prescriptions, reported meds, and allergies."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 

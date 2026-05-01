@@ -37,11 +37,8 @@ Assembly <-- Data : MedicationRequest[]
 Assembly -> Data : Query External Meds
 Assembly <-- Data : MedicationStatement[]
 
-Assembly -> Data : Query Dispenses 
+Assembly -> Data : Query Dispenses
 Assembly <-- Data : MedicationDispense[]
-
-Assembly -> Data : Query Counseling Status
-Assembly <-- Data : Observation[]
 
 Assembly -> Assembly : Assemble Bundle
 
@@ -57,7 +54,6 @@ note right of Provider
   - AllergyIntolerance resources
   - MedicationRequest/Statement resources
   - MedicationDispense resources
-  - Counseling Observation resources
   - Pharmacy Organization resources
 end note
 

@@ -1,8 +1,8 @@
-Profile: EMIOutpatientMedicationRequest
+Profile: EMIMedicationRequestPrescription
 Parent: MedicationRequest
-Id: emi-outpatient-medicationrequest
-Title: "EMI Outpatient MedicationRequest"
-Description: "Outpatient prescription profile for Essential Medication Information, representing VistA File 52 prescriptions."
+Id: emi-medicationrequest-prescription
+Title: "EMI MedicationRequest Prescription"
+Description: "Prescription profile for Essential Medication Information, representing VistA File 52 prescriptions."
 
 * ^status = #active
 * ^experimental = true
@@ -10,9 +10,9 @@ Description: "Outpatient prescription profile for Essential Medication Informati
 
 // Invariants - see Rulesets.fsh
 * insert AllMedsInvariants
-* insert SigInvariants
 * insert OrderInvariants
-* insert OutpatientInvariants
+* insert PendingInvariants
+* insert PrescriptionInvariants
 
 // Source system
 * meta.source 0..1 MS
@@ -47,13 +47,13 @@ Description: "Outpatient prescription profile for Essential Medication Informati
 // Intent - always order for prescriptions
 * intent = #order (exactly)
 
-// Category - outpatient
+// Category - community
 * category 1..* MS
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
-* category contains outpatient 1..1 MS
-* category[outpatient] = $MedicationRequestCategory#outpatient
+* category contains community 1..1 MS
+* category[community] = $MedicationRequestCategory#community
 
 // Medication - drug name with RxNorm coding
 * medication[x] only CodeableConcept
@@ -96,22 +96,11 @@ Description: "Outpatient prescription profile for Essential Medication Informati
 * dispenseRequest.performer only Reference(EMIPharmacyOrganization)
 * dispenseRequest.performer ^short = "Dispensing pharmacy"
 
-// Supporting information - medication counseling
-* supportingInformation 0..* MS
-* supportingInformation ^slicing.discriminator.type = #type
-* supportingInformation ^slicing.discriminator.path = "resolve()"
-* supportingInformation ^slicing.rules = #open
-
-* supportingInformation contains counseling 0..* MS
-* supportingInformation[counseling] only Reference(Procedure)
-* supportingInformation[counseling] ^short = "Medication counseling procedure"
-* supportingInformation[counseling] ^definition = "Reference to medication counseling procedure (EMIMedicationCounselingProcedure) indicating whether counseling was performed."
-
 // Mappings to VistA File 52
 Mapping: VistAFile52
 Id: vista-file-52
 Title: "VistA Prescription File (52)"
-Source: EMIOutpatientMedicationRequest
+Source: EMIMedicationRequestPrescription
 Target: "http://va.gov/fhir/emi/StructureDefinition/vista-file-52"
 
 * identifier[rxNumber] -> "File 52, Field .01 (RX #)"

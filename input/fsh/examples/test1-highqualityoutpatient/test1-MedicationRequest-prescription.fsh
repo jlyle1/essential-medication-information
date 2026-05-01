@@ -1,8 +1,8 @@
-Instance: test-patient-1-outpatient-lisinopril
-InstanceOf: EMIOutpatientMedicationRequest
+Instance: test1-prescription-lisinopril
+InstanceOf: EMIMedicationRequestPrescription
 Usage: #example
-Title: "EMI Outpatient MedicationRequest - Lisinopril"
-Description: "Example of an outpatient prescription for Lisinopril from VistA File 52."
+Title: "Test 1 - Prescription MedicationRequest - Lisinopril"
+Description: "Example of a prescription for Lisinopril from VistA File 52."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
@@ -15,15 +15,15 @@ Description: "Example of an outpatient prescription for Lisinopril from VistA Fi
 
 * status = #active
 * intent = #order
-* category[outpatient] = $MedicationRequestCategory#outpatient
+* category[community] = $MedicationRequestCategory#community
 
 * medicationCodeableConcept = $RxNorm#314076 "lisinopril 10 MG Oral Tablet"
 * medicationCodeableConcept.text = "LISINOPRIL 10MG TAB"
 
-* subject = Reference(test-patient-1-patient)
+* subject = Reference(test1-patient)
 * authoredOn = "2025-10-01"
 
-* requester = Reference(test-patient-1-practitioner)
+* requester = Reference(test1-practitioner)
 
 * reasonCode[+] = $SCT#38341003 "Hypertensive disorder"
 * reasonCode[=].text = "Hypertension"
@@ -45,15 +45,13 @@ Description: "Example of an outpatient prescription for Lisinopril from VistA Fi
 * dispenseRequest.numberOfRepeatsAllowed = 3
 * dispenseRequest.validityPeriod.start = "2025-10-01"
 * dispenseRequest.validityPeriod.end = "2026-10-01"
-* dispenseRequest.performer = Reference(test-patient-1-pharmacy)
+* dispenseRequest.performer = Reference(test1-pharmacy)
 
-* supportingInformation[counseling] = Reference(test-patient-1-counseling-done)
-
-Instance: test-patient-1-outpatient-metformin
-InstanceOf: EMIOutpatientMedicationRequest
+Instance: test1-prescription-metformin
+InstanceOf: EMIMedicationRequestPrescription
 Usage: #example
-Title: "EMI Outpatient MedicationRequest - Metformin"
-Description: "Example of an outpatient prescription for Metformin."
+Title: "Test 1 - Prescription MedicationRequest - Metformin"
+Description: "Example of a prescription for Metformin."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
@@ -66,15 +64,15 @@ Description: "Example of an outpatient prescription for Metformin."
 
 * status = #active
 * intent = #order
-* category[outpatient] = $MedicationRequestCategory#outpatient
+* category[community] = $MedicationRequestCategory#community
 
 * medicationCodeableConcept = $RxNorm#861004 "metformin hydrochloride 1000 MG Oral Tablet"
 * medicationCodeableConcept.text = "METFORMIN 1000MG TAB"
 
-* subject = Reference(test-patient-1-patient)
+* subject = Reference(test1-patient)
 * authoredOn = "2025-09-15"
 
-* requester = Reference(test-patient-1-practitioner)
+* requester = Reference(test1-practitioner)
 
 * reasonCode[+] = $SCT#73211009 "Diabetes mellitus"
 * reasonCode[=].text = "Diabetes"
@@ -96,15 +94,13 @@ Description: "Example of an outpatient prescription for Metformin."
 * dispenseRequest.numberOfRepeatsAllowed = 3
 * dispenseRequest.validityPeriod.start = "2025-09-15"
 * dispenseRequest.validityPeriod.end = "2026-09-15"
-* dispenseRequest.performer = Reference(test-patient-1-pharmacy)
+* dispenseRequest.performer = Reference(test1-pharmacy)
 
-* supportingInformation[counseling] = Reference(test-patient-1-counseling-notdone)
-
-Instance: test-patient-1-outpatient-atorvastatin
-InstanceOf: EMIOutpatientMedicationRequest
+Instance: test1-prescription-atorvastatin
+InstanceOf: EMIMedicationRequestPrescription
 Usage: #example
-Title: "EMI Outpatient MedicationRequest - Atorvastatin (Cancelled)"
-Description: "Example of a cancelled outpatient prescription for Atorvastatin."
+Title: "Test 1 - Prescription MedicationRequest - Atorvastatin (Cancelled)"
+Description: "Example of a cancelled prescription for Atorvastatin."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
@@ -118,15 +114,15 @@ Description: "Example of a cancelled outpatient prescription for Atorvastatin."
 
 * status = #cancelled
 * intent = #order
-* category[outpatient] = $MedicationRequestCategory#outpatient
+* category[community] = $MedicationRequestCategory#community
 
 * medicationCodeableConcept = $RxNorm#617312 "atorvastatin 10 MG Oral Tablet"
 * medicationCodeableConcept.text = "ATORVASTATIN 10MG TAB"
 
-* subject = Reference(test-patient-1-patient)
+* subject = Reference(test1-patient)
 * authoredOn = "2025-08-10"
 
-* requester = Reference(test-patient-1-practitioner)
+* requester = Reference(test1-practitioner)
 
 * reasonCode[+] = $SCT#13644009 "Hypercholesterolemia"
 * reasonCode[=].text = "High Cholesterol"
@@ -148,4 +144,4 @@ Description: "Example of a cancelled outpatient prescription for Atorvastatin."
 * dispenseRequest.numberOfRepeatsAllowed = 3
 * dispenseRequest.validityPeriod.start = "2025-08-10"
 * dispenseRequest.validityPeriod.end = "2026-08-10"
-* dispenseRequest.performer = Reference(test-patient-1-pharmacy)
+* dispenseRequest.performer = Reference(test1-pharmacy)

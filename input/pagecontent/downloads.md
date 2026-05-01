@@ -6,10 +6,10 @@ This page provides links to downloadable artifacts and technical details about t
 
 The following package file includes all the value sets, profiles, extensions, and other knowledge artifacts defined as part of this implementation guide:
 
-- [Full Implementation Guide](full-ig.zip)
-- [NPM Package](package.tgz)
-- [JSON Definitions](definitions.json.zip)
-- [XML Definitions](definitions.xml.zip)
+- [Full Implementation Guide](../full-ig.zip)
+- [NPM Package](../package.tgz)
+- [JSON Definitions](../definitions.json.zip)
+- [XML Definitions](../definitions.xml.zip)
 
 #### Expansion Parameters
 

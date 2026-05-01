@@ -1,7 +1,7 @@
-Instance: test-patient-1-request-parameters
+Instance: test1-request-parameters
 InstanceOf: EMIRequestParameters
 Usage: #example
-Title: "EMI Request Parameters Example"
+Title: "Test 1 - Request Parameters Example"
 Description: "Example of parameters for the $essential-medication-information-for-review operation request."
 
 * parameter[patient].name = "patient"
@@ -17,14 +17,11 @@ Description: "Example of parameters for the $essential-medication-information-fo
 * parameter[includeDispenses].name = "includeDispenses"
 * parameter[includeDispenses].valueBoolean = true
 
-* parameter[includeCounseling].name = "includeCounseling"
-* parameter[includeCounseling].valueBoolean = true
-
-Instance: test-patient-1-request-parameters-minimal
+Instance: test1-request-parameters-minimal
 InstanceOf: EMIRequestParameters
 Usage: #example
-Title: "EMI Request Parameters - Minimal"
+Title: "Test 1 - Request Parameters - Minimal"
 Description: "Example of minimal parameters for the $essential-medication-information-for-review operation."
 
 * parameter[patient].name = "patient"
-* parameter[patient].valueReference = Reference(test-patient-1-patient)
+* parameter[patient].valueReference = Reference(test1-patient)

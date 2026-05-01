@@ -1,7 +1,7 @@
-Profile: EMIReportedMedicationRequest
+Profile: EMIMedicationRequestReported
 Parent: MedicationRequest
-Id: emi-reported-medicationrequest
-Title: "EMI Reported MedicationRequest"
+Id: emi-medicationrequest-reported
+Title: "EMI MedicationRequest Reported"
 Description: "Reported/external medication profile for Essential Medication Information, representing VistA File 55.05 non-VA medications including OTC, herbal, and outside prescriptions. Uses MedicationRequest with intent=plan and reportedBoolean=true."
 
 * ^status = #active
@@ -10,7 +10,6 @@ Description: "Reported/external medication profile for Essential Medication Info
 
 // Invariants - see Rulesets.fsh
 * insert AllMedsInvariants
-* insert SigInvariants
 * insert ReportedInvariants
 
 // Source system
@@ -53,9 +52,9 @@ Description: "Reported/external medication profile for Essential Medication Info
 * subject only Reference(EMIPatient)
 * subject 1..1 MS
 
-// Requester - typically the patient for self-reported meds
-* requester MS
-* requester ^short = "Who reported the medication (often the patient)"
+// Recorder - who documented the reported medication
+* recorder MS
+* recorder ^short = "Who recorded the reported medication (typically a clinician)"
 
 // Reason for use
 * reasonCode MS
@@ -75,7 +74,7 @@ Description: "Reported/external medication profile for Essential Medication Info
 Mapping: VistAFile55-05-Reported
 Id: vista-file-55-05
 Title: "VistA Non-VA Meds File (55.05)"
-Source: EMIReportedMedicationRequest
+Source: EMIMedicationRequestReported
 Target: "http://va.gov/fhir/emi/StructureDefinition/vista-file-55-05"
 
 * medicationCodeableConcept -> "File 55.05, Field .01 (ORDERABLE ITEM) -> mapped to RxNorm"

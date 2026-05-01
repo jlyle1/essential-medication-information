@@ -1,7 +1,7 @@
-Instance: test-patient-1-pharmacy
+Instance: test1-pharmacy
 InstanceOf: EMIPharmacyOrganization
 Usage: #example
-Title: "EMI Pharmacy Organization Example"
+Title: "Test 1 - Pharmacy Organization Example"
 Description: "Example of a VA pharmacy organization."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"

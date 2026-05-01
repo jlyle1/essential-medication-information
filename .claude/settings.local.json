@@ -11,7 +11,8 @@
       "Bash(java:*)",
       "Bash(powershell -Command \"Import-Csv -Path ''C:\\\\repos\\\\essential-medication-information\\\\.ignore\\\\testPatient.xlsx''\")",
       "Bash(python:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(grep:*)"
     ]
   }
 }

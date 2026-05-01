@@ -1,22 +1,22 @@
-Instance: test-patient-1-unitdose
-InstanceOf: EMIInpatientMedicationRequest
+Instance: test3-unitdose
+InstanceOf: EMIMedicationRequestInFacility
 Usage: #example
-Title: "EMI Inpatient MedicationRequest Example"
-Description: "Example of an inpatient unit dose medication order from VistA File 55.06."
+Title: "Test 3 - In-Facility MedicationRequest Example"
+Description: "Example of an in-facility unit dose medication order from VistA File 55.06."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
-* identifier[orderNumber].system = $VistAUnitDoseOrderNumber
-* identifier[orderNumber].value = "789012"
+* identifier[udOrderNumber].system = $VistAUnitDoseOrderNumber
+* identifier[udOrderNumber].value = "789012"
 
 * status = #active
 * intent = #order
-* category[inpatient] = $MedicationRequestCategory#inpatient
+* category = $MedicationRequestCategory#inpatient
 
 * medicationCodeableConcept = $RxNorm#197361 "amlodipine 5 MG Oral Tablet"
 * medicationCodeableConcept.text = "AMLODIPINE 5MG TAB"
 
-* subject = Reference(test-patient-1-patient)
+* subject = Reference(test3-patient)
 * authoredOn = "2024-03-10"
 
 * requester.display = "Dr. Robert Johnson"
@@ -25,25 +25,25 @@ Description: "Example of an inpatient unit dose medication order from VistA File
 * dosageInstruction[=].route = $SCT#26643006 "Oral route"
 * dosageInstruction[=].timing.code.text = "QD"
 
-Instance: test-patient-1-iv
-InstanceOf: EMIIVMedicationRequest
+Instance: test3-iv
+InstanceOf: EMIMedicationRequestInFacility
 Usage: #example
-Title: "EMI IV MedicationRequest Example"
-Description: "Example of an inpatient IV medication order from VistA File 55.01."
+Title: "Test 3 - IV MedicationRequest Example"
+Description: "Example of an in-facility IV medication order from VistA File 55.01."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
-* identifier[orderNumber].system = $VistAIVOrderNumber
-* identifier[orderNumber].value = "456789"
+* identifier[ivOrderNumber].system = $VistAIVOrderNumber
+* identifier[ivOrderNumber].value = "456789"
 
 * status = #active
 * intent = #order
-* category[inpatient] = $MedicationRequestCategory#inpatient
+* category = $MedicationRequestCategory#inpatient
 
 * medicationCodeableConcept = $RxNorm#309778 "dextrose 5 % Injectable Solution"
 * medicationCodeableConcept.text = "DEXTROSE 5% 1000ML (D5W)"
 
-* subject = Reference(test-patient-1-patient)
+* subject = Reference(test3-patient)
 * authoredOn = "2024-03-10"
 
 * requester.display = "Dr. Robert Johnson"
