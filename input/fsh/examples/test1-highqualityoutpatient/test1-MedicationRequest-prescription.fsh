@@ -1,5 +1,5 @@
 Instance: test1-prescription-lisinopril
-InstanceOf: EMIMedicationRequestPrescription
+InstanceOf: EMIFinishedPrescriptions
 Usage: #example
 Title: "Test 1 - Prescription MedicationRequest - Lisinopril"
 Description: "Example of a prescription for Lisinopril from VistA File 52."
@@ -47,8 +47,97 @@ Description: "Example of a prescription for Lisinopril from VistA File 52."
 * dispenseRequest.validityPeriod.end = "2026-10-01"
 * dispenseRequest.performer = Reference(test1-pharmacy)
 
+Instance: test1-prescription-lisinopril-old
+InstanceOf: EMIFinishedPrescriptions
+Usage: #example
+Title: "Test 1 - Prescription MedicationRequest - Lisinopril 20mg (Cancelled)"
+Description: "Example of a cancelled prescription for Lisinopril 20mg, replaced by 10mg dose."
+
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
+// Extensions for dispense summary
+* extension[dateLastDispensed].valueDateTime = "2025-12-15"
+* extension[remainingFills].valueUnsignedInt = 1
+* extension[cancelDate].valueDateTime = "2026-01-10"
+
+* identifier[rxNumber].system = "http://va.gov/fhir/sid/648/52-.01"
+* identifier[rxNumber].value = "12345677"
+
+* status = #cancelled
+* intent = #order
+* category[community] = $MedicationRequestCategory#community
+
+* medicationCodeableConcept = $RxNorm#314077 "lisinopril 20 MG Oral Tablet"
+* medicationCodeableConcept.text = "LISINOPRIL 20MG TAB"
+
+* subject = Reference(test1-patient)
+* authoredOn = "2025-06-01"
+
+* requester = Reference(test1-practitioner)
+
+* reasonCode[+] = $SCT#38341003 "Hypertensive disorder"
+* reasonCode[=].text = "Hypertension"
+
+* dosageInstruction[+].text = "TAKE ONE TABLET BY MOUTH EVERY DAY FOR BLOOD PRESSURE"
+* dosageInstruction[=].timing.repeat.frequency = 1
+* dosageInstruction[=].timing.repeat.period = 1
+* dosageInstruction[=].timing.repeat.periodUnit = #d
+* dosageInstruction[=].route = $SCT#26643006 "Oral route"
+* dosageInstruction[=].doseAndRate[+].doseQuantity.value = 1
+* dosageInstruction[=].doseAndRate[=].doseQuantity.unit = "tablet"
+
+* dispenseRequest.quantity.value = 90
+* dispenseRequest.quantity.unit = "tablet"
+* dispenseRequest.expectedSupplyDuration.value = 90
+* dispenseRequest.expectedSupplyDuration.unit = "days"
+* dispenseRequest.expectedSupplyDuration.system = $UCUM
+* dispenseRequest.expectedSupplyDuration.code = #d
+* dispenseRequest.numberOfRepeatsAllowed = 3
+* dispenseRequest.validityPeriod.start = "2025-06-01"
+* dispenseRequest.validityPeriod.end = "2026-06-01"
+* dispenseRequest.performer = Reference(test1-pharmacy)
+
+Instance: test1-pending-metformin-er
+InstanceOf: EMIPrescriptions
+Usage: #example
+Title: "Test 1 - Pending MedicationRequest - Metformin ER"
+Description: "Example of a pending prescription for Metformin ER awaiting initial fill."
+
+* meta.source = "http://va.gov/fhir/sid/sta3n/520"
+
+* status = #active
+* intent = #order
+* category[community] = $MedicationRequestCategory#community
+
+* medicationCodeableConcept = $RxNorm#861004 "metFORMIN hydrochloride 1000 MG Oral Tablet"
+* medicationCodeableConcept.text = "metformin hydrochloride 1000 MG"
+
+* subject = Reference(test1-patient)
+* authoredOn = "2026-04-25"
+
+* requester = Reference(test1-practitioner)
+
+* reasonCode[+] = $SCT#73211009 "Diabetes mellitus"
+* reasonCode[=].text = "Diabetes"
+
+* dosageInstruction[+].text = "TAKE ONE TABLET BY MOUTH ONCE DAILY WITH DINNER"
+* dosageInstruction[=].timing.repeat.frequency = 1
+* dosageInstruction[=].timing.repeat.period = 1
+* dosageInstruction[=].timing.repeat.periodUnit = #d
+* dosageInstruction[=].route = $SCT#26643006 "Oral route"
+* dosageInstruction[=].doseAndRate[+].doseQuantity.value = 1
+* dosageInstruction[=].doseAndRate[=].doseQuantity.unit = "tablet"
+
+* dispenseRequest.quantity.value = 90
+* dispenseRequest.quantity.unit = "tablet"
+* dispenseRequest.expectedSupplyDuration.value = 90
+* dispenseRequest.expectedSupplyDuration.unit = "days"
+* dispenseRequest.expectedSupplyDuration.system = $UCUM
+* dispenseRequest.expectedSupplyDuration.code = #d
+* dispenseRequest.numberOfRepeatsAllowed = 3
+
 Instance: test1-prescription-metformin
-InstanceOf: EMIMedicationRequestPrescription
+InstanceOf: EMIFinishedPrescriptions
 Usage: #example
 Title: "Test 1 - Prescription MedicationRequest - Metformin"
 Description: "Example of a prescription for Metformin."
@@ -97,7 +186,7 @@ Description: "Example of a prescription for Metformin."
 * dispenseRequest.performer = Reference(test1-pharmacy)
 
 Instance: test1-prescription-atorvastatin
-InstanceOf: EMIMedicationRequestPrescription
+InstanceOf: EMIFinishedPrescriptions
 Usage: #example
 Title: "Test 1 - Prescription MedicationRequest - Atorvastatin (Cancelled)"
 Description: "Example of a cancelled prescription for Atorvastatin."

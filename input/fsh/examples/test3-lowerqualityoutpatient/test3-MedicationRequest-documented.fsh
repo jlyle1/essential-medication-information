@@ -1,8 +1,8 @@
-Instance: test1-reported-acetaminophen
-InstanceOf: EMIMedicationRequestReported
+Instance: test3-documented-acetaminophen
+InstanceOf: EMIDocumentedMedications
 Usage: #example
-Title: "Test 1 - Reported MedicationRequest Example"
-Description: "Example of a reported medication (patient-reported OTC) from VistA File 55.05."
+Title: "Test 3 - Documented MedicationRequest Example"
+Description: "Example of a documented medication (patient-documented OTC) from VistA File 55.05."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
@@ -14,11 +14,11 @@ Description: "Example of a reported medication (patient-reported OTC) from VistA
 * medicationCodeableConcept = $RxNorm#198436 "acetaminophen 325 MG Oral Capsule"
 * medicationCodeableConcept.text = "ACETAMINOPHEN 325MG CAP (OTC)"
 
-* subject = Reference(test1-patient)
+* subject = Reference(test3-patient)
 * authoredOn = "2024-01-20"
 
-* requester = Reference(test1-patient)
-* requester.display = "Patient-reported"
+* recorder = Reference(test3-practitioner)
+* recorder.display = "Clinician who recorded patient-documented medication"
 
 * reasonCode[+].text = "Pain relief"
 
@@ -28,11 +28,11 @@ Description: "Example of a reported medication (patient-reported OTC) from VistA
 * dosageInstruction[=].timing.repeat.period = 1
 * dosageInstruction[=].timing.repeat.periodUnit = #d
 
-Instance: test1-reported-fishoil
-InstanceOf: EMIMedicationRequestReported
+Instance: test3-documented-fishoil
+InstanceOf: EMIDocumentedMedications
 Usage: #example
-Title: "Test 1 - Reported MedicationRequest - Herbal"
-Description: "Example of a reported herbal supplement."
+Title: "Test 3 - Documented MedicationRequest - Herbal"
+Description: "Example of a documented herbal supplement."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
@@ -43,10 +43,10 @@ Description: "Example of a reported herbal supplement."
 
 * medicationCodeableConcept.text = "Fish Oil 1000mg"
 
-* subject = Reference(test1-patient)
+* subject = Reference(test3-patient)
 * authoredOn = "2024-02-15"
 
-* requester = Reference(test1-patient)
+* recorder = Reference(test3-practitioner)
 
 * reasonCode[+].text = "Cholesterol support"
 

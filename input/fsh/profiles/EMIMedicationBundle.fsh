@@ -46,8 +46,11 @@ Description: "Bundle profile for Essential Medication Information, serving as th
 * entry[allergy].resource only EMIAllergyIntolerance
 * entry[allergy] ^short = "Allergy or adverse reaction"
 
-// Medication entries (prescription, pending, in-facility, or reported)
-* entry[medication].resource only EMIMedicationRequestPrescription or EMIMedicationRequestPending or EMIMedicationRequestInFacility or EMIMedicationRequestReported
+// Medication entries - using inheritance hierarchy
+// EMIAllMedications is the base for all medication types
+// Children: EMIAllButDocumentedMedications (orders), EMIDocumentedMedications
+// Grandchildren: EMIPrescriptions, EMIFinishedPrescriptions
+* entry[medication].resource only EMIAllMedications
 * entry[medication] ^short = "Medication from any source"
 
 // Dispense entries

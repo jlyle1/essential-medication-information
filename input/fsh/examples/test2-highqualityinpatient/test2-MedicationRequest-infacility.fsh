@@ -1,19 +1,19 @@
 Instance: test2-vancomycin
-InstanceOf: EMIMedicationRequestInFacility
+InstanceOf: EMIAllButDocumentedMedications
 Usage: #example
 Title: "Test 2 - Vancomycin IV"
 Description: "Example of an IV vancomycin order for an inpatient."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
-* identifier[ivOrderNumber].system = $VistAIVOrderNumber
-* identifier[ivOrderNumber].value = "112233"
+* identifier[+].system = $VistAIVOrderNumber
+* identifier[=].value = "112233"
 
 * status = #active
 * intent = #order
 * category = $MedicationRequestCategory#inpatient
 
-* medicationCodeableConcept = $RxNorm#1807508 "vancomycin 1 GM per 200 ML Injection"
+* medicationCodeableConcept = $RxNorm#1807508 "200 ML vancomycin 5 MG/ML Injection"
 * medicationCodeableConcept.text = "VANCOMYCIN 1GM IV"
 
 * subject = Reference(test2-patient)
@@ -32,15 +32,15 @@ Description: "Example of an IV vancomycin order for an inpatient."
 * dosageInstruction[=].doseAndRate[=].rateQuantity.code = #mL/h
 
 Instance: test2-esomeprazole
-InstanceOf: EMIMedicationRequestInFacility
+InstanceOf: EMIAllButDocumentedMedications
 Usage: #example
 Title: "Test 2 - Esomeprazole IV"
 Description: "Example of an IV esomeprazole order for stress ulcer prophylaxis."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
-* identifier[ivOrderNumber].system = $VistAIVOrderNumber
-* identifier[ivOrderNumber].value = "112234"
+* identifier[+].system = $VistAIVOrderNumber
+* identifier[=].value = "112234"
 
 * status = #active
 * intent = #order
@@ -61,15 +61,15 @@ Description: "Example of an IV esomeprazole order for stress ulcer prophylaxis."
 * dosageInstruction[=].timing.code.text = "DAILY"
 
 Instance: test2-metoprolol
-InstanceOf: EMIMedicationRequestInFacility
+InstanceOf: EMIAllButDocumentedMedications
 Usage: #example
 Title: "Test 2 - Metoprolol PO"
 Description: "Example of a unit dose metoprolol order for an inpatient."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
-* identifier[udOrderNumber].system = $VistAUnitDoseOrderNumber
-* identifier[udOrderNumber].value = "445566"
+* identifier[+].system = $VistAUnitDoseOrderNumber
+* identifier[=].value = "445566"
 
 * status = #active
 * intent = #order

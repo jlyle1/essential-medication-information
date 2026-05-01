@@ -40,19 +40,19 @@ Description: "dosageInstruction.text (SIG) SHOULD be populated to provide patien
 Expression: "dosageInstruction.text.exists()"
 
 // -----------------------------------------------------------------------------
-// 2. ReportedInvariants - Reported/External profile only
+// 2. DocumentedInvariants - Documented/External profile only
 // -----------------------------------------------------------------------------
 
-RuleSet: ReportedInvariants
-* obeys emi-rep-1
+RuleSet: DocumentedInvariants
+* obeys emi-doc-1
 
-Invariant: emi-rep-1
+Invariant: emi-doc-1
 Severity: #warning
-Description: "recorder SHOULD be populated to identify who recorded the reported medication"
+Description: "recorder SHOULD be populated to identify who recorded the documented medication"
 Expression: "recorder.exists()"
 
 // -----------------------------------------------------------------------------
-// 3. OrderInvariants - All profiles except Reported (orders have a prescriber)
+// 3. OrderInvariants - All profiles except Documented (orders have a prescriber)
 // -----------------------------------------------------------------------------
 
 RuleSet: OrderInvariants

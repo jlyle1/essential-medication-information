@@ -22,8 +22,8 @@ This IG supports querying for essential medication information, including:
 | Allergy | Reaction | Allergy | Policy |
 | Medication | Drug name with form and strength | All Meds | Policy |
 | Medication | Indication | All Meds | Policy |
-| Medication | Provider name and credential | All Meds but Reported | Policy |
-| Medication | Recorder | Reported | Policy |
+| Medication | Provider name and credential | All Meds but Documented | Policy |
+| Medication | Recorder | Documented | Policy |
 | Medication | Status | All Meds | Policy |
 | Medication | Sig | All Meds | Policy |
 | Medication | Prescription # | Prescription | Policy |
@@ -56,7 +56,7 @@ There are several tactics for indicating that a given data element is desired.
 We avoid tactics 1 & 2 as potentially filtering clinically significant information. We adopt 3, 4, and 5 in a layered approach to maximize the visibility of our requirements.
 
 ### Example data
-Test 1 - High Quality Outpatient: manually constructed outpatient with prescriptions, reported meds, and allergies
+Test 1 - High Quality Outpatient: manually constructed outpatient with prescriptions, documented meds, and allergies
 Test 2 - High Quality Inpatient: current inpatient with IV and unit dose orders, NKA
 Test 3 - Lower Quality Outpatient: outpatient demonstrating common data gaps
 

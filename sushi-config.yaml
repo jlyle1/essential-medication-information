@@ -65,12 +65,13 @@ groups:
       - StructureDefinition/emi-allergyintolerance
   MedicationProfiles:
     name: Medications
-    description: Profiles for medication information from various sources
+    description: Profiles for medication information from various sources (inheritance hierarchy)
     resources:
-      - StructureDefinition/emi-medicationrequest-prescription
-      - StructureDefinition/emi-medicationrequest-pending
-      - StructureDefinition/emi-medicationrequest-infacility
-      - StructureDefinition/emi-medicationrequest-reported
+      - StructureDefinition/emi-all-medications
+      - StructureDefinition/emi-all-but-documented-medications
+      - StructureDefinition/emi-prescriptions
+      - StructureDefinition/emi-finished-prescriptions
+      - StructureDefinition/emi-documented-medications
   DispenseProfiles:
     name: Dispense and Pharmacy
     description: Profiles for dispense events and pharmacy information

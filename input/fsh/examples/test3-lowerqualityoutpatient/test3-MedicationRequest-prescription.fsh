@@ -1,5 +1,5 @@
 Instance: test3-prescription-lisinopril
-InstanceOf: EMIMedicationRequestPrescription
+InstanceOf: EMIFinishedPrescriptions
 Usage: #example
 Title: "Test 3 - Prescription MedicationRequest - Lisinopril"
 Description: "Example of a prescription for Lisinopril from VistA File 52."
@@ -48,7 +48,7 @@ Description: "Example of a prescription for Lisinopril from VistA File 52."
 * dispenseRequest.performer = Reference(test3-pharmacy)
 
 Instance: test3-prescription-metformin
-InstanceOf: EMIMedicationRequestPrescription
+InstanceOf: EMIFinishedPrescriptions
 Usage: #example
 Title: "Test 3 - Prescription MedicationRequest - Metformin"
 Description: "Example of a prescription for Metformin."
@@ -97,7 +97,7 @@ Description: "Example of a prescription for Metformin."
 * dispenseRequest.performer = Reference(test3-pharmacy)
 
 Instance: test3-prescription-atorvastatin
-InstanceOf: EMIMedicationRequestPrescription
+InstanceOf: EMIFinishedPrescriptions
 Usage: #example
 Title: "Test 3 - Prescription MedicationRequest - Atorvastatin (Cancelled)"
 Description: "Example of a cancelled prescription for Atorvastatin."
