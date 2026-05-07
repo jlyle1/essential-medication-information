@@ -1,7 +1,7 @@
-Instance: test2-patient
+Instance: test3-patient
 InstanceOf: EMIPatient
 Usage: #example
-Title: "Test 2 - High Quality Inpatient"
+Title: "Test 3 - High Quality Inpatient"
 Description: "Example inpatient with high quality medication data including IV and unit dose orders."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"

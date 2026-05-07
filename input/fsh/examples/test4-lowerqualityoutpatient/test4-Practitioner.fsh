@@ -1,7 +1,7 @@
-Instance: test3-practitioner
+Instance: test4-practitioner
 InstanceOf: EMIPractitioner
 Usage: #example
-Title: "Test 3 - Practitioner - Dr. Jane Doe"
+Title: "Test 4 - Practitioner - Dr. Jane Doe"
 Description: "Example practitioner for medication requests."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"

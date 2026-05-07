@@ -1,7 +1,7 @@
-Instance: test3-documented-acetaminophen
+Instance: test4-documented-acetaminophen
 InstanceOf: EMIDocumentedMedications
 Usage: #example
-Title: "Test 3 - Documented MedicationRequest Example"
+Title: "Test 4 - Documented MedicationRequest Example"
 Description: "Example of a documented medication (patient-documented OTC) from VistA File 55.05."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -14,10 +14,10 @@ Description: "Example of a documented medication (patient-documented OTC) from V
 * medicationCodeableConcept = $RxNorm#198436 "acetaminophen 325 MG Oral Capsule"
 * medicationCodeableConcept.text = "ACETAMINOPHEN 325MG CAP (OTC)"
 
-* subject = Reference(test3-patient)
+* subject = Reference(test4-patient)
 * authoredOn = "2024-01-20"
 
-* recorder = Reference(test3-practitioner)
+* recorder = Reference(test4-practitioner)
 * recorder.display = "Clinician who recorded patient-documented medication"
 
 * reasonCode[+].text = "Pain relief"
@@ -28,10 +28,10 @@ Description: "Example of a documented medication (patient-documented OTC) from V
 * dosageInstruction[=].timing.repeat.period = 1
 * dosageInstruction[=].timing.repeat.periodUnit = #d
 
-Instance: test3-documented-fishoil
+Instance: test4-documented-fishoil
 InstanceOf: EMIDocumentedMedications
 Usage: #example
-Title: "Test 3 - Documented MedicationRequest - Herbal"
+Title: "Test 4 - Documented MedicationRequest - Herbal"
 Description: "Example of a documented herbal supplement."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -43,10 +43,10 @@ Description: "Example of a documented herbal supplement."
 
 * medicationCodeableConcept.text = "Fish Oil 1000mg"
 
-* subject = Reference(test3-patient)
+* subject = Reference(test4-patient)
 * authoredOn = "2024-02-15"
 
-* recorder = Reference(test3-practitioner)
+* recorder = Reference(test4-practitioner)
 
 * reasonCode[+].text = "Cholesterol support"
 

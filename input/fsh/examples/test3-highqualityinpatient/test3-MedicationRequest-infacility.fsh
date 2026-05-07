@@ -1,7 +1,7 @@
-Instance: test2-vancomycin
+Instance: test3-vancomycin
 InstanceOf: EMIAllButDocumentedMedications
 Usage: #example
-Title: "Test 2 - Vancomycin IV"
+Title: "Test 3 - Vancomycin IV"
 Description: "Example of an IV vancomycin order for an inpatient."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -16,7 +16,7 @@ Description: "Example of an IV vancomycin order for an inpatient."
 * medicationCodeableConcept = $RxNorm#1807508 "200 ML vancomycin 5 MG/ML Injection"
 * medicationCodeableConcept.text = "VANCOMYCIN 1GM IV"
 
-* subject = Reference(test2-patient)
+* subject = Reference(test3-patient)
 * authoredOn = "2024-03-15"
 
 * requester.display = "Dr. Robert Johnson"
@@ -31,10 +31,10 @@ Description: "Example of an IV vancomycin order for an inpatient."
 * dosageInstruction[=].doseAndRate[=].rateQuantity.system = $UCUM
 * dosageInstruction[=].doseAndRate[=].rateQuantity.code = #mL/h
 
-Instance: test2-esomeprazole
+Instance: test3-esomeprazole
 InstanceOf: EMIAllButDocumentedMedications
 Usage: #example
-Title: "Test 2 - Esomeprazole IV"
+Title: "Test 3 - Esomeprazole IV"
 Description: "Example of an IV esomeprazole order for stress ulcer prophylaxis."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -49,7 +49,7 @@ Description: "Example of an IV esomeprazole order for stress ulcer prophylaxis."
 * medicationCodeableConcept = $RxNorm#283742 "esomeprazole"
 * medicationCodeableConcept.text = "ESOMEPRAZOLE 40MG IV"
 
-* subject = Reference(test2-patient)
+* subject = Reference(test3-patient)
 * authoredOn = "2024-03-15"
 
 * requester.display = "Dr. Robert Johnson"
@@ -60,10 +60,10 @@ Description: "Example of an IV esomeprazole order for stress ulcer prophylaxis."
 * dosageInstruction[=].route = $SCT#47625008 "Intravenous route"
 * dosageInstruction[=].timing.code.text = "DAILY"
 
-Instance: test2-metoprolol
+Instance: test3-metoprolol
 InstanceOf: EMIAllButDocumentedMedications
 Usage: #example
-Title: "Test 2 - Metoprolol PO"
+Title: "Test 3 - Metoprolol PO"
 Description: "Example of a unit dose metoprolol order for an inpatient."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -78,7 +78,7 @@ Description: "Example of a unit dose metoprolol order for an inpatient."
 * medicationCodeableConcept = $RxNorm#866924 "metoprolol tartrate 25 MG Oral Tablet"
 * medicationCodeableConcept.text = "METOPROLOL 25MG TAB"
 
-* subject = Reference(test2-patient)
+* subject = Reference(test3-patient)
 * authoredOn = "2024-03-15"
 
 * requester.display = "Dr. Robert Johnson"

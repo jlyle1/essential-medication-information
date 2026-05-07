@@ -20,7 +20,7 @@ Description: "Medication dispense profile for Essential Medication Information, 
 // Medication
 * medication[x] only CodeableConcept
 * medicationCodeableConcept 1..1 MS
-* medicationCodeableConcept from http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4 (preferred)
+* medicationCodeableConcept from EMIRxNormWithStrengthFormVS (preferred)
 * medicationCodeableConcept ^short = "Dispensed medication with RxNorm code"
 
 // Subject

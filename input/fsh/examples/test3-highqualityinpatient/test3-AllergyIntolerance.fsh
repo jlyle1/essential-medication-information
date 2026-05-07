@@ -1,7 +1,7 @@
-Instance: test2-nka
+Instance: test3-nka
 InstanceOf: EMIAllergyIntolerance
 Usage: #example
-Title: "Test 2 - No Known Allergies"
+Title: "Test 3 - No Known Allergies"
 Description: "Example of No Known Allergies (NKA) assertion."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -12,4 +12,4 @@ Description: "Example of No Known Allergies (NKA) assertion."
 * code = $SCT#716186003 "No known allergy"
 * code.text = "No Known Allergies"
 
-* patient = Reference(test2-patient)
+* patient = Reference(test3-patient)

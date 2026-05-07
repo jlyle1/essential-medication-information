@@ -1,7 +1,7 @@
-Instance: test3-unitdose
+Instance: test4-unitdose
 InstanceOf: EMIAllButDocumentedMedications
 Usage: #example
-Title: "Test 3 - In-Facility MedicationRequest Example"
+Title: "Test 4 - In-Facility MedicationRequest Example"
 Description: "Example of an in-facility unit dose medication order from VistA File 55.06."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -16,7 +16,7 @@ Description: "Example of an in-facility unit dose medication order from VistA Fi
 * medicationCodeableConcept = $RxNorm#197361 "amlodipine 5 MG Oral Tablet"
 * medicationCodeableConcept.text = "AMLODIPINE 5MG TAB"
 
-* subject = Reference(test3-patient)
+* subject = Reference(test4-patient)
 * authoredOn = "2024-03-10"
 
 * requester.display = "Dr. Robert Johnson"
@@ -25,10 +25,10 @@ Description: "Example of an in-facility unit dose medication order from VistA Fi
 * dosageInstruction[=].route = $SCT#26643006 "Oral route"
 * dosageInstruction[=].timing.code.text = "QD"
 
-Instance: test3-iv
+Instance: test4-iv
 InstanceOf: EMIAllButDocumentedMedications
 Usage: #example
-Title: "Test 3 - IV MedicationRequest Example"
+Title: "Test 4 - IV MedicationRequest Example"
 Description: "Example of an in-facility IV medication order from VistA File 55.01."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -43,7 +43,7 @@ Description: "Example of an in-facility IV medication order from VistA File 55.0
 * medicationCodeableConcept = $RxNorm#309778 "glucose 50 MG/ML Injectable Solution"
 * medicationCodeableConcept.text = "DEXTROSE 5% 1000ML (D5W)"
 
-* subject = Reference(test3-patient)
+* subject = Reference(test4-patient)
 * authoredOn = "2024-03-10"
 
 * requester.display = "Dr. Robert Johnson"
