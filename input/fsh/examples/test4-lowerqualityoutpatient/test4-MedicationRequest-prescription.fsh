@@ -50,8 +50,8 @@ Description: "Example of a prescription for Lisinopril from VistA File 52."
 Instance: test4-prescription-metformin
 InstanceOf: EMIFinishedPrescriptions
 Usage: #example
-Title: "Test 4 - Prescription MedicationRequest - Metformin"
-Description: "Example of a prescription for Metformin."
+Title: "Test 4 - Prescription MedicationRequest - Metformin (Missing Structured Timing)"
+Description: "Example of a prescription with only free-text sig - no structured timing."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
@@ -74,16 +74,10 @@ Description: "Example of a prescription for Metformin."
 
 * requester = Reference(test4-practitioner)
 
-* reasonCode[+] = $SCT#73211009 "Diabetes mellitus"
-* reasonCode[=].text = "Diabetes"
+// QUALITY GAP: No reasonCode - missing clinical indication
 
+// QUALITY GAP: Only free-text sig, no structured timing/dose
 * dosageInstruction[+].text = "TAKE ONE TABLET BY MOUTH TWICE DAILY WITH MEALS"
-* dosageInstruction[=].timing.repeat.frequency = 2
-* dosageInstruction[=].timing.repeat.period = 1
-* dosageInstruction[=].timing.repeat.periodUnit = #d
-* dosageInstruction[=].route = $SCT#26643006 "Oral route"
-* dosageInstruction[=].doseAndRate[+].doseQuantity.value = 1
-* dosageInstruction[=].doseAndRate[=].doseQuantity.unit = "tablet"
 
 * dispenseRequest.quantity.value = 180
 * dispenseRequest.quantity.unit = "tablet"

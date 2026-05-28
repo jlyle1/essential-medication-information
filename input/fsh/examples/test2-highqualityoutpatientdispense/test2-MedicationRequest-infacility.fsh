@@ -1,7 +1,7 @@
 Instance: test2-unitdose
 InstanceOf: EMIAllButDocumentedMedications
 Usage: #example
-Title: "Test 1 - In-Facility MedicationRequest Example"
+Title: "Test 2 - In-Facility MedicationRequest Example"
 Description: "Example of an in-facility unit dose medication order from VistA File 55.06."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -30,7 +30,7 @@ Description: "Example of an in-facility unit dose medication order from VistA Fi
 Instance: test2-iv
 InstanceOf: EMIAllButDocumentedMedications
 Usage: #example
-Title: "Test 1 - IV MedicationRequest Example"
+Title: "Test 2 - IV MedicationRequest Example"
 Description: "Example of an in-facility IV medication order from VistA File 55.01."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"

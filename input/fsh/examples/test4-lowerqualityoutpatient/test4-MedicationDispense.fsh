@@ -1,8 +1,8 @@
 Instance: test4-dispense
 InstanceOf: EMIMedicationDispense
 Usage: #example
-Title: "Test 4 - MedicationDispense Example"
-Description: "Example of a medication dispense showing last released date."
+Title: "Test 4 - MedicationDispense Example (Missing Details)"
+Description: "Example of a medication dispense with missing quantity and days supply - common legacy data gap."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
@@ -12,17 +12,11 @@ Description: "Example of a medication dispense showing last released date."
 * medicationCodeableConcept.text = "LISINOPRIL 10MG TAB"
 
 * subject = Reference(test4-patient)
-* authorizingPrescription = Reference(test4-prescription-lisinopril)
 
-* quantity.value = 90
-* quantity.unit = "tablet"
+// QUALITY GAP: No authorizingPrescription link
+// QUALITY GAP: No quantity
+// QUALITY GAP: No daysSupply
 
-* daysSupply.value = 90
-* daysSupply.unit = "days"
-* daysSupply.system = $UCUM
-* daysSupply.code = #d
-
-* whenPrepared = "2024-04-01T10:30:00-05:00"
 * whenHandedOver = "2024-04-02T14:15:00-05:00"
 
 * performer[+].actor = Reference(test4-pharmacy)

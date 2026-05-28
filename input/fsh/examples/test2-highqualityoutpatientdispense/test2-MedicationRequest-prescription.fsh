@@ -1,7 +1,7 @@
 Instance: test2-prescription-lisinopril
 InstanceOf: EMIFinishedPrescriptions
 Usage: #example
-Title: "Test 1 - Prescription MedicationRequest - Lisinopril"
+Title: "Test 2 - Prescription MedicationRequest - Lisinopril"
 Description: "Example of a prescription for Lisinopril from VistA File 52."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -50,7 +50,7 @@ Description: "Example of a prescription for Lisinopril from VistA File 52."
 Instance: test2-prescription-lisinopril-old
 InstanceOf: EMIFinishedPrescriptions
 Usage: #example
-Title: "Test 1 - Prescription MedicationRequest - Lisinopril 20mg (Cancelled)"
+Title: "Test 2 - Prescription MedicationRequest - Lisinopril 20mg (Cancelled)"
 Description: "Example of a cancelled prescription for Lisinopril 20mg, replaced by 10mg dose."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -100,7 +100,7 @@ Description: "Example of a cancelled prescription for Lisinopril 20mg, replaced 
 Instance: test2-pending-metformin-er
 InstanceOf: EMIPrescriptions
 Usage: #example
-Title: "Test 1 - Pending MedicationRequest - Metformin ER"
+Title: "Test 2 - Pending MedicationRequest - Metformin ER"
 Description: "Example of a pending prescription for Metformin ER awaiting initial fill."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -139,7 +139,7 @@ Description: "Example of a pending prescription for Metformin ER awaiting initia
 Instance: test2-prescription-metformin
 InstanceOf: EMIFinishedPrescriptions
 Usage: #example
-Title: "Test 1 - Prescription MedicationRequest - Metformin"
+Title: "Test 2 - Prescription MedicationRequest - Metformin"
 Description: "Example of a prescription for Metformin."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -188,7 +188,7 @@ Description: "Example of a prescription for Metformin."
 Instance: test2-prescription-atorvastatin
 InstanceOf: EMIFinishedPrescriptions
 Usage: #example
-Title: "Test 1 - Prescription MedicationRequest - Atorvastatin (Cancelled)"
+Title: "Test 2 - Prescription MedicationRequest - Atorvastatin (Cancelled)"
 Description: "Example of a cancelled prescription for Atorvastatin."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"

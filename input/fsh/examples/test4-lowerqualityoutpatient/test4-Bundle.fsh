@@ -1,8 +1,8 @@
 Instance: test4-bundle
 InstanceOf: EMIMedicationBundle
 Usage: #example
-Title: "Test 4 - Medication Bundle Example"
-Description: "Example of a complete medication bundle returned from the $essential-medication-information-for-review operation."
+Title: "Test 4 - Lower Quality Medication Bundle"
+Description: "Example medication bundle with common data quality gaps: missing reactions, missing structured dosing, text-only medications, incomplete dispense records."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 

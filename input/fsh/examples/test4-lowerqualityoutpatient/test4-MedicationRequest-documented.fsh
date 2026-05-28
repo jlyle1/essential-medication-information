@@ -1,8 +1,8 @@
 Instance: test4-documented-acetaminophen
 InstanceOf: EMIDocumentedMedications
 Usage: #example
-Title: "Test 4 - Documented MedicationRequest Example"
-Description: "Example of a documented medication (patient-documented OTC) from VistA File 55.05."
+Title: "Test 4 - Documented MedicationRequest Example (Minimal Data)"
+Description: "Example of a documented medication with minimal data - common for patient-reported meds."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
@@ -11,22 +11,16 @@ Description: "Example of a documented medication (patient-documented OTC) from V
 * reportedBoolean = true
 * category[patientSpecified] = http://terminology.hl7.org/CodeSystem/medication-statement-category#patientspecified "Patient Specified"
 
-* medicationCodeableConcept = $RxNorm#198436 "acetaminophen 325 MG Oral Capsule"
-* medicationCodeableConcept.text = "ACETAMINOPHEN 325MG CAP (OTC)"
+// QUALITY GAP: No RxNorm code, only text
+* medicationCodeableConcept.text = "Tylenol"
 
 * subject = Reference(test4-patient)
 * authoredOn = "2024-01-20"
 
 * recorder = Reference(test4-practitioner)
-* recorder.display = "Clinician who recorded patient-documented medication"
 
-* reasonCode[+].text = "Pain relief"
-
-* dosageInstruction[+].text = "Take 1 tablet daily"
-* dosageInstruction[=].route = $SCT#26643006 "Oral route"
-* dosageInstruction[=].timing.repeat.frequency = 1
-* dosageInstruction[=].timing.repeat.period = 1
-* dosageInstruction[=].timing.repeat.periodUnit = #d
+// QUALITY GAP: No reasonCode
+// QUALITY GAP: No dosageInstruction - patient just said "I take Tylenol"
 
 Instance: test4-documented-fishoil
 InstanceOf: EMIDocumentedMedications

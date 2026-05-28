@@ -1,7 +1,7 @@
 Instance: test2-documented-acetaminophen
 InstanceOf: EMIDocumentedMedications
 Usage: #example
-Title: "Test 1 - Documented MedicationRequest Example"
+Title: "Test 2 - Documented MedicationRequest Example"
 Description: "Example of a documented medication (patient-documented OTC) from VistA File 55.05."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -31,7 +31,7 @@ Description: "Example of a documented medication (patient-documented OTC) from V
 Instance: test2-documented-fishoil
 InstanceOf: EMIDocumentedMedications
 Usage: #example
-Title: "Test 1 - Documented MedicationRequest - Herbal"
+Title: "Test 2 - Documented MedicationRequest - Herbal"
 Description: "Example of a documented herbal supplement."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"

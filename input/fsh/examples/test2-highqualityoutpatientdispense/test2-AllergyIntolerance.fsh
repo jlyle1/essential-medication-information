@@ -1,7 +1,7 @@
 Instance: test2-allergy-penicillin
 InstanceOf: EMIAllergyIntolerance
 Usage: #example
-Title: "Test 1 - Allergy Example - Penicillin"
+Title: "Test 2 - Allergy Example - Penicillin"
 Description: "Example of a penicillin allergy with rash reaction."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
@@ -23,7 +23,7 @@ Description: "Example of a penicillin allergy with rash reaction."
 Instance: test2-allergy-nsaid
 InstanceOf: EMIAllergyIntolerance
 Usage: #example
-Title: "Test 1 - Allergy Example - NSAID Intolerance"
+Title: "Test 2 - Allergy Example - NSAID Intolerance"
 Description: "Example of an NSAID intolerance with GI upset."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"

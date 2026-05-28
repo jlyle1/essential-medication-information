@@ -60,5 +60,5 @@ Expression: "meta.source.exists()"
 
 Invariant: emi-allergy-2
 Severity: #warning
-Description: "reaction.manifestation SHOULD be populated when code is not in the Drug Allergy value set"
+Description: "reaction.manifestation SHOULD be populated when code is not in the Allergy Refutation value set"
 Expression: "code.memberOf('http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1186.5').not() implies reaction.manifestation.exists()"

@@ -23,8 +23,8 @@ Description: "Example of a penicillin allergy with rash reaction."
 Instance: test4-allergy-nsaid
 InstanceOf: EMIAllergyIntolerance
 Usage: #example
-Title: "Test 4 - Allergy Example - NSAID Intolerance"
-Description: "Example of an NSAID intolerance with GI upset."
+Title: "Test 4 - Allergy Example - NSAID Intolerance (Missing Reaction)"
+Description: "Example of an NSAID intolerance WITHOUT reaction details - common data gap."
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
@@ -38,6 +38,4 @@ Description: "Example of an NSAID intolerance with GI upset."
 
 * patient = Reference(test4-patient)
 
-* reaction[+].manifestation[+] = $SCT#422587007 "Nausea"
-* reaction[=].manifestation[=].text = "GI upset"
-* reaction[=].severity = #mild
+// QUALITY GAP: No reaction.manifestation - triggers emi-allergy-2 warning

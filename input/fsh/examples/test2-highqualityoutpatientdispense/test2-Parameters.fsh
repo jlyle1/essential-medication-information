@@ -1,7 +1,7 @@
 Instance: test2-request-parameters
 InstanceOf: EMIRequestParameters
 Usage: #example
-Title: "Test 1 - Request Parameters Example"
+Title: "Test 2 - Request Parameters Example"
 Description: "Example of parameters for the $essential-medication-information-for-review operation request."
 
 * parameter[patient].name = "patient"
@@ -20,7 +20,7 @@ Description: "Example of parameters for the $essential-medication-information-fo
 Instance: test2-request-parameters-minimal
 InstanceOf: EMIRequestParameters
 Usage: #example
-Title: "Test 1 - Request Parameters - Minimal"
+Title: "Test 2 - Request Parameters - Minimal"
 Description: "Example of minimal parameters for the $essential-medication-information-for-review operation."
 
 * parameter[patient].name = "patient"
