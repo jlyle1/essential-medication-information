@@ -1,7 +1,7 @@
 Extension: RemainingFills
-Id: emi-remaining-fills
+Id: refillsRemaining
 Title: "Remaining Fills"
-Description: "The number of refills remaining on a prescription. Use this extension on MedicationRequest when the remaining fill count needs to be conveyed separately from the originally authorized number of refills."
+Description: "The number of refills remaining on a prescription. Use this extension on MedicationRequest when the remaining fill count needs to be conveyed explicitly rather than being calculated from authorized number of refills minus count of refills. MedicationDispense context is provide to align with vx130 migration to Oracle Health."
 
 * ^status = #active
 * ^version = "1.0.0"
@@ -10,6 +10,8 @@ Description: "The number of refills remaining on a prescription. Use this extens
 * ^mapping[0].name = "VistA Prescription File (52)"
 * ^context[0].type = #element
 * ^context[0].expression = "MedicationRequest"
+* ^context[1].type = #element
+* ^context[1].expression = "MedicationDispense"
 
 * value[x] only unsignedInt
 * valueUnsignedInt 1..1

@@ -9,7 +9,7 @@ Description: "Example outpatient with high quality medication data including pre
 * identifier[ICN].system = $ICN
 * identifier[ICN].value = "1012345678V123456"
 
-* name[+].use = #official
+//* name[+].use = #official     // is this required? VistA doesn't specify a use. US Core suggests USCDI, but not found.
 * name[=].family = "Smith"
 * name[=].given[+] = "John"
 * name[=].given[+] = "Robert"

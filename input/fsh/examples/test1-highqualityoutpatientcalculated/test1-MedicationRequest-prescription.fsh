@@ -105,7 +105,7 @@ Description: "Example of a pending prescription for Metformin ER awaiting initia
 
 * meta.source = "http://va.gov/fhir/sid/sta3n/520"
 
-* status = #active
+* status = #active  // or draft?
 * intent = #order
 * category[community] = $MedicationRequestCategory#community
 
