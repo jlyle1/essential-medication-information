@@ -2,14 +2,14 @@ Instance: active-end
 InstanceOf: SearchParameter
 Usage: #definition
 Title: "MedicationRequest Active End Date"
-Description: "Search MedicationRequest by the date the prescription ended (either expiration date or cancellation date). This enables server-side filtering for status horizon queries."
+Description: "Search MedicationRequest by the date the prescription ended (expiration date or cancellation date, whichever is earlier). This enables server-side filtering for status horizon queries."
 
 * status = #active
 * code = #active-end
 * name = "ActiveEnd"
 * base = #MedicationRequest
 * type = #date
-* expression = "MedicationRequest.dispenseRequest.validityPeriod.end | MedicationRequest.extension('http://va.gov/fhir/emi/StructureDefinition/medicationrequest-cancelDate').value"
+* expression = "MedicationRequest.iif(dispenseRequest.validityPeriod.end.exists().not(), extension('http://va.gov/fhir/emi/StructureDefinition/medicationrequest-cancelDate').value, iif(extension('http://va.gov/fhir/emi/StructureDefinition/medicationrequest-cancelDate').value.exists().not(), dispenseRequest.validityPeriod.end, iif(dispenseRequest.validityPeriod.end <= extension('http://va.gov/fhir/emi/StructureDefinition/medicationrequest-cancelDate').value, dispenseRequest.validityPeriod.end, extension('http://va.gov/fhir/emi/StructureDefinition/medicationrequest-cancelDate').value)))"
 * comparator[+] = #eq
 * comparator[+] = #gt
 * comparator[+] = #lt

@@ -36,7 +36,7 @@ Recently inactive medications require retrieving non-active prescriptions and fi
 
 **Option A: Server-side filtering using `active-end` search parameter**
 
-Servers implementing EMI profiles **SHOULD** support the [`active-end`](SearchParameter-active-end.html) search parameter, which queries by either `dispenseRequest.validityPeriod.end` (expiration date) or `cancelDate` extension value.
+Servers implementing EMI profiles **SHOULD** support the [`active-end`](SearchParameter-active-end.html) search parameter, which returns the earlier of `dispenseRequest.validityPeriod.end` (expiration date) or `cancelDate` extension value.
 
 ```
 GET [base]/MedicationRequest?patient=[id]
@@ -45,8 +45,10 @@ GET [base]/MedicationRequest?patient=[id]
     &_include=MedicationRequest:medication
 ```
 
-**Example:** Prescriptions that ended within the last 180 days (status horizon date = 180 days ago)
+**Example:** Using a 180-day status horizon (the duration is configurable per implementation requirements)
 ```
+# If today is 2026-07-09 and statusHorizonDuration = 180 days,
+# then status-horizon-date = 2026-01-10
 GET /MedicationRequest?patient=Patient/123
     &status=completed,cancelled,stopped,on-hold
     &active-end=ge2026-01-10
