@@ -18,7 +18,6 @@ jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 publisher:
   name: VA Pharmacy Benefits Management Services
   url: https://www.va.gov/
-  email: pbm@va.gov
 
 # Dependencies
 dependencies:
@@ -28,6 +27,10 @@ dependencies:
 pages:
   index.md:
     title: Home
+  usecase.md:
+    title: Use Cases
+  fetching-medication-information.md:
+    title: Fetching Medication Information
   artifacts.html:
     title: Artifacts
   downloads.md:
@@ -36,6 +39,8 @@ pages:
 # Menu
 menu:
   Home: index.html
+  Use Cases: usecase.html
+  Fetching Medications: fetching-medication-information.html
   Artifacts: artifacts.html
   Operation: OperationDefinition-essential-medication-information-for-review.html
   Downloads: downloads.html
@@ -94,6 +99,11 @@ groups:
     description: FHIR Operations defined by this IG
     resources:
       - OperationDefinition/essential-medication-information-for-review
+  SearchParameters:
+    name: Search Parameters
+    description: Custom search parameters defined by this IG
+    resources:
+      - SearchParameter/active-end
   Terminology:
     name: Terminology
     description: Code systems and value sets

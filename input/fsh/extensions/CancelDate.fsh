@@ -1,5 +1,5 @@
 Extension: CancelDate
-Id: emi-cancel-date
+Id: medicationrequest-cancelDate
 Title: "Cancel Date"
 Description: "The date the medication request was cancelled or discontinued. Use this extension on MedicationRequest when the cancellation date needs to be conveyed."
 

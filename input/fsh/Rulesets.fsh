@@ -112,7 +112,7 @@ Expression: "dispenseRequest.validityPeriod.end.exists()"
 Invariant: emi-out-5
 Severity: #warning
 Description: "cancelDate extension SHOULD be populated for cancelled, completed, or stopped prescriptions"
-Expression: "status in ('cancelled' | 'completed' | 'stopped') implies extension('http://va.gov/fhir/emi/StructureDefinition/emi-cancel-date').exists()"
+Expression: "status in ('cancelled' | 'completed' | 'stopped') implies extension('http://va.gov/fhir/emi/StructureDefinition/medicationrequest-cancelDate').exists()"
 
 Invariant: emi-out-6
 Severity: #warning
@@ -122,7 +122,7 @@ Expression: "extension('http://va.gov/fhir/emi/StructureDefinition/emi-date-last
 Invariant: emi-out-7
 Severity: #warning
 Description: "remainingFills extension SHOULD be populated to indicate refills remaining"
-Expression: "extension('http://va.gov/fhir/emi/StructureDefinition/refillsRemaining').exists()"
+Expression: "extension('http://va.gov/fhir/emi/StructureDefinition/medicationrequest-refills-remaining').exists()"
 
 Invariant: emi-out-8
 Severity: #warning

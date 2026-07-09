@@ -1,6 +1,6 @@
-Extension: RemainingFills
-Id: refillsRemaining
-Title: "Remaining Fills"
+Extension: RefillsRemaining
+Id: medicationrequest-refills-remaining
+Title: "Count of Refills Remaining"
 Description: "The number of refills remaining on a prescription. Use this extension on MedicationRequest when the remaining fill count needs to be conveyed explicitly rather than being calculated from authorized number of refills minus count of refills. MedicationDispense context is provide to align with vx130 migration to Oracle Health."
 
 * ^status = #active

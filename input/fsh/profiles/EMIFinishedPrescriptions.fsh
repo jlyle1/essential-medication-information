@@ -14,7 +14,7 @@ Description: "Profile for completed prescription processing (VistA File 52). Ext
 // Extensions for dispense summary
 * extension contains
     DateLastDispensed named dateLastDispensed 0..1 MS and
-    RemainingFills named remainingFills 0..1 MS and
+    RefillsRemaining named remainingFills 0..1 MS and
     CancelDate named cancelDate 0..1 MS
 * extension[dateLastDispensed] ^short = "Date medication was last dispensed (valueDateTime)"
 * extension[remainingFills] ^short = "Number of refills remaining (valueUnsignedInt)"
