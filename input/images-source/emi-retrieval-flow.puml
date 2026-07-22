@@ -1,0 +1,43 @@
+@startuml emi-retrieval-flow
+
+title Essential Medication Information Retrieval
+
+skinparam ActivityBackgroundColor #2D5A7B
+skinparam ActivityFontColor White
+skinparam ActivityBorderColor #2D5A7B
+skinparam ActivityDiamondBackgroundColor #F5C6AA
+skinparam ActivityDiamondFontColor Black
+skinparam ActivityDiamondBorderColor #E8A87C
+skinparam ArrowColor #2D5A7B
+skinparam ArrowThickness 2
+
+start
+
+:Get Capability Statement;
+
+if (Support for\nOperation?) then (Y)
+  :Call operation on Patient;
+  stop
+else (N)
+  :Search Patient by\nPatient identifier;
+endif
+
+:Search Allergies by\nPatient & status;
+
+:Search active PatMeds\nby Patient & status;
+
+if (Support for cancel \n date extension and \n date search parameters?) then (Y)
+  :Search inactive PatMeds\nby Patient, status, end date,\ncancel date extension;
+else (N)
+  :Search inactive PatMeds\nby Patient, status,\nauthoredOn – 1 yr – horizon;
+endif
+
+if (Support for Dispense\nCalculations?) then (Y)
+  :For all PatMeds, get\nDispense count, last;\n append to PatMed;
+else (N)
+  :For all PatMeds, use\n_revInclude Dispenses \n at steps 5, 6, & 7;
+endif
+
+stop
+
+@enduml
