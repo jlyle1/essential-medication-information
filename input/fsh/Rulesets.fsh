@@ -117,12 +117,12 @@ Expression: "status in ('cancelled' | 'completed' | 'stopped') implies extension
 Invariant: emi-out-6
 Severity: #warning
 Description: "dateLastDispensed extension SHOULD be populated to indicate last release date"
-Expression: "extension('http://va.gov/fhir/emi/StructureDefinition/emi-date-last-dispensed').exists()"
+Expression: "extension('http://va.gov/fhir/emi/StructureDefinition/medicationrequest-dateLastDispensed').exists()"
 
 Invariant: emi-out-7
 Severity: #warning
 Description: "remainingFills extension SHOULD be populated to indicate refills remaining"
-Expression: "extension('http://va.gov/fhir/emi/StructureDefinition/medicationrequest-refills-remaining').exists()"
+Expression: "extension('http://va.gov/fhir/emi/StructureDefinition/medicationrequest-refillsRemaining').exists()"
 
 Invariant: emi-out-8
 Severity: #warning

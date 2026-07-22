@@ -14,6 +14,25 @@ This guidance defines standard query patterns that
 
 ---
 
+### Retrieval Flow Overview
+
+The following diagram illustrates the decision-based approach for retrieving essential medication information, adapting to varying server capabilities:
+
+<div>
+{% include emi-retrieval-flow.svg %}
+</div>
+
+**Flow Summary:**
+1. **Capability Detection** - Query the server's CapabilityStatement to determine supported features
+2. **Operation or Search** - Use the `$essential-medication-information-for-review` operation if supported; otherwise use RESTful search queries
+3. **Patient Resolution** - Search for the patient by identifier to obtain the patient resource ID
+4. **Allergies** - Retrieve allergy information by patient and clinical status
+5. **Active Medications** - Search for active MedicationRequests by patient and status
+6. **Inactive Medications** - Search for recently inactive medications using date parameters if supported, or `authoredOn` approximation as fallback
+7. **Dispense Enrichment** - For all medications, either use pre-calculated extensions (if supported) or retrieve dispenses via `_revinclude`
+
+---
+
 ### Query Patterns
 
 Essential medication information includes two categories:
@@ -68,6 +87,30 @@ GET [base]/MedicationRequest?patient=[id]
 Client then filters results based on:
 - `dispenseRequest.validityPeriod.end` (expiration date) within status horizon, OR
 - `cancelDate` extension value within status horizon
+
+**Option C: authoredOn approximation (limited fallback)**
+
+If client-side filtering is not practical and the server does not support the `active-end` search parameter, clients can use `authoredOn` as an approximation:
+
+```
+GET [base]/MedicationRequest?patient=[id]
+    &status=completed,cancelled,stopped,on-hold
+    &authoredOn=ge[one-year-before-status-horizon]
+    &_include=MedicationRequest:medication
+```
+
+**Example:** Using a 180-day status horizon with 1-year lookback
+```
+# If today is 2026-07-15 and statusHorizonDuration = 180 days,
+# then status-horizon-date = 2026-01-16
+# and authoredOn lookback = 2025-01-16
+GET /MedicationRequest?patient=Patient/123
+    &status=completed,cancelled,stopped,on-hold
+    &authoredOn=ge2025-01-16
+    &_include=MedicationRequest:medication
+```
+
+**Note:** This approach may over-include medications that were authorized within the lookback period but expired or were cancelled before the status horizon. Client-side filtering (Option B) remains more accurate when feasible.
 
 ---
 

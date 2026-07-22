@@ -1,5 +1,5 @@
 Extension: DateLastDispensed
-Id: medicationrequest-date-last-dispensed
+Id: medicationrequest-dateLastDispensed
 Title: "Date Last Dispensed"
 Description: "The date the medication was last dispensed or released to the patient. Use this extension on MedicationRequest when dispense history needs to be conveyed without a separate MedicationDispense resource. If the medication has not yet been dispensed, use the data-absent-reason extension with code 'not-performed'."
 
