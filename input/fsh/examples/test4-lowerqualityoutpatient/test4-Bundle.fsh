@@ -9,6 +9,10 @@ Description: "Example medication bundle with common data quality gaps: missing r
 * type = #collection
 * timestamp = "2024-04-15T10:00:00-05:00"
 
+// Echoed request parameters (as applied by the server)
+* entry[parameters].fullUrl = "http://va.gov/fhir/emi/Parameters/test4-request-parameters"
+* entry[parameters].resource = test4-request-parameters
+
 // Patient
 * entry[patient].fullUrl = "http://va.gov/fhir/emi/Patient/test4-patient"
 * entry[patient].resource = test4-patient

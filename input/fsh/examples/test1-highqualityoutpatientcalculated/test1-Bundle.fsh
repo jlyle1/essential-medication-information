@@ -9,6 +9,10 @@ Description: "Example of a complete medication bundle returned from the $essenti
 * type = #collection
 * timestamp = "2024-04-15T10:00:00-05:00"
 
+// Echoed request parameters (as applied by the server)
+* entry[parameters].fullUrl = "http://va.gov/fhir/emi/Parameters/test1-request-parameters"
+* entry[parameters].resource = test1-request-parameters
+
 // Patient
 * entry[patient].fullUrl = "http://va.gov/fhir/emi/Patient/test1-patient"
 * entry[patient].resource = test1-patient

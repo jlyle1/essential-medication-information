@@ -18,7 +18,7 @@ Description: "Retrieve a patient's essential medication information including al
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "The time window for including recently discontinued or expired medications. Per VHA Directive 1164, typically 90-180 days. Default is 180 days if not specified."
+* parameter[=].documentation = "The time window for including recently discontinued or expired medications. Per VHA Directive 1164, typically 90-180 days. Default is 180 days if not specified. The applied value (including the default when not requested) is echoed in the returned bundle's Parameters entry."
 * parameter[=].type = #Duration
 
 * parameter[+].name = #includeDispenses
@@ -42,6 +42,6 @@ Description: "Retrieve a patient's essential medication information including al
 * parameter[=].use = #out
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].documentation = "A Bundle containing the patient, allergy list, medication list, and all referenced resources (individual allergies, medications, dispenses, pharmacies, and practitioners)."
+* parameter[=].documentation = "A Bundle containing the patient, allergy list, medication list, and all referenced resources (individual allergies, medications, dispenses, pharmacies, and practitioners). The bundle SHOULD include a Parameters entry echoing the request parameters as applied by the server, with defaults filled in (e.g., statusHorizonDuration of 180 days when not requested), so the bundle is self-describing."
 * parameter[=].type = #Bundle
 * parameter[=].targetProfile = Canonical(EMIMedicationBundle)

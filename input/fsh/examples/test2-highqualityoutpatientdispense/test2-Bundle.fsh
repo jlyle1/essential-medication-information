@@ -9,6 +9,10 @@ Description: "Example of a medication bundle using dispense records for last rel
 * type = #collection
 * timestamp = "2024-04-15T10:00:00-05:00"
 
+// Echoed request parameters (as applied by the server)
+* entry[parameters].fullUrl = "http://va.gov/fhir/emi/Parameters/test2-request-parameters"
+* entry[parameters].resource = test2-request-parameters
+
 // Patient
 * entry[patient].fullUrl = "http://va.gov/fhir/emi/Patient/test2-patient"
 * entry[patient].resource = test2-patient

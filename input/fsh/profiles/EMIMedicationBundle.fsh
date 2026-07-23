@@ -31,12 +31,18 @@ Description: "Bundle profile for Essential Medication Information, serving as th
 * entry ^slicing.description = "Slices for required resource types"
 
 * entry contains
+    parameters 0..1 MS and
     patient 1..1 MS and
     allergy 0..* MS and
     medication 0..* MS and
     dispense 0..* MS and
     pharmacy 0..* MS and
     provider 0..* MS
+
+// Echoed request parameters
+* entry[parameters].resource only EMIRequestParameters
+* entry[parameters] ^short = "Request parameters as applied by the server"
+* entry[parameters] ^definition = "The request parameters the server applied when assembling this bundle, echoed so the bundle is self-describing. Defaults are filled in: when the caller omitted statusHorizonDuration, this entry carries the value the server actually used (e.g., 180 days)."
 
 // Patient entry
 * entry[patient].resource only EMIPatient
