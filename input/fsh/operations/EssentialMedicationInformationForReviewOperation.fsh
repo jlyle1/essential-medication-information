@@ -10,10 +10,17 @@ Description: "Retrieve a patient's essential medication information including al
 * code = #essential-medication-information-for-review
 * resource = #Patient
 * system = false
-* type = false
-* instance = true
+* type = true
+* instance = false
 
 // Input parameters
+* parameter[+].name = #patient
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The patient for whom to retrieve medication information, identified by ICN or EDIPI. Identifier-based lookup supports cross-system requests where the caller does not know the server's Patient resource id."
+* parameter[=].type = #Identifier
+
 * parameter[+].name = #statusHorizonDuration
 * parameter[=].use = #in
 * parameter[=].min = 0

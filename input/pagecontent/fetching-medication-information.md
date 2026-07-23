@@ -185,10 +185,17 @@ GET [base]/MedicationRequest?patient=[id]
 #### Option 2: Using the Operation (if supported)
 
 ```
-POST [base]/Patient/[id]/$essential-medication-information-for-review
+POST [base]/Patient/$essential-medication-information-for-review
 {
   "resourceType": "Parameters",
   "parameter": [
+    {
+      "name": "patient",
+      "valueIdentifier": {
+        "system": "urn:oid:2.16.840.1.113883.4.349",
+        "value": "1012345678V123456"
+      }
+    },
     {
       "name": "statusHorizonDuration",
       "valueDuration": {

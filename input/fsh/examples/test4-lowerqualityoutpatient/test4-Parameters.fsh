@@ -6,7 +6,7 @@ Description: "Example of parameters for the $essential-medication-information-fo
 
 * parameter[patient].name = "patient"
 * parameter[patient].valueIdentifier.system = "urn:oid:2.16.840.1.113883.4.349"
-* parameter[patient].valueIdentifier.value = "1012345678V123456"
+* parameter[patient].valueIdentifier.value = "1012345680V345678"
 
 * parameter[statusHorizonDuration].name = "statusHorizonDuration"
 * parameter[statusHorizonDuration].valueDuration.value = 180
@@ -24,4 +24,5 @@ Title: "Test 4 - Request Parameters - Minimal"
 Description: "Example of minimal parameters for the $essential-medication-information-for-review operation."
 
 * parameter[patient].name = "patient"
-* parameter[patient].valueReference = Reference(test4-patient)
+* parameter[patient].valueIdentifier.system = "urn:oid:2.16.840.1.113883.4.349"
+* parameter[patient].valueIdentifier.value = "1012345680V345678"

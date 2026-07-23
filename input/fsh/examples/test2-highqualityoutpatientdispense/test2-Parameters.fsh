@@ -24,4 +24,5 @@ Title: "Test 2 - Request Parameters - Minimal"
 Description: "Example of minimal parameters for the $essential-medication-information-for-review operation."
 
 * parameter[patient].name = "patient"
-* parameter[patient].valueReference = Reference(test2-patient)
+* parameter[patient].valueIdentifier.system = "urn:oid:2.16.840.1.113883.4.349"
+* parameter[patient].valueIdentifier.value = "1012345678V123456"

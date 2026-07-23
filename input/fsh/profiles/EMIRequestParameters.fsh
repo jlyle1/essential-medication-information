@@ -21,9 +21,9 @@ Description: "Parameters profile for the $essential-medication-information-for-r
 
 // Patient identifier parameter
 * parameter[patient].name = "patient" (exactly)
-* parameter[patient].value[x] only Identifier or Reference
-* parameter[patient] ^short = "Patient identifier or reference"
-* parameter[patient] ^definition = "The patient for whom to retrieve medication information. Can be an ICN, EDIPI, or direct reference."
+* parameter[patient].value[x] only Identifier
+* parameter[patient] ^short = "Patient identifier (ICN or EDIPI)"
+* parameter[patient] ^definition = "The patient for whom to retrieve medication information, identified by ICN or EDIPI. Identifier-based lookup supports cross-system requests where the caller does not know the server's Patient resource id."
 
 // Status horizon duration - for determining discontinued/expired lookback
 * parameter[statusHorizonDuration].name = "statusHorizonDuration" (exactly)

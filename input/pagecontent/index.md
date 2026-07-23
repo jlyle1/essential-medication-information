@@ -39,7 +39,7 @@ This IG supports querying for essential medication information, including:
 
 ### Operation
 
-The guide defines the [$essential-medication-information-for-review](OperationDefinition-essential-medication-information-for-review.html) operation to retrieve a patient's complete essential medication information as a Bundle. This operation is defined as a FHIR Restful operation on the Patient resource.
+The guide defines the [$essential-medication-information-for-review](OperationDefinition-essential-medication-information-for-review.html) operation to retrieve a patient's complete essential medication information as a Bundle. This operation is defined as a type-level FHIR RESTful operation on the Patient resource type, with the patient identified by an ICN or EDIPI identifier parameter rather than a resource id, so callers do not need to resolve the server's Patient resource first.
 
 It may be necessary to iterate or federate queries, e.g., in a network, or if multiple external partners are known. For that case, a system-level Operation may be more flexible. That use case, and the reconciliation of versions it may require, are not addressed here. 
 
